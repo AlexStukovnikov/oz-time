@@ -1,4 +1,61 @@
 import { normalizeUnit, isFixedUnit, unitToMilliseconds } from './units.js';
+import { OzTime } from '../core/core.js';
+
+function assertValidTimestamp(timestamp, name) {
+    if (typeof timestamp !== 'number' || Number.isNaN(timestamp)) {
+        throw new TypeError(`${name}: timestamp must be a valid number`);
+    }
+}
+
+function assertValidAmount(amount, name) {
+    if (typeof amount !== 'number' || Number.isNaN(amount)) {
+        throw new TypeError(`${name}: amount must be a valid number`);
+    }
+}
+
+function assertOzTime(value, name) {
+    if (!(value instanceof OzTime)) {
+        throw new TypeError(`${name} must be OzTime`);
+    }
+}
+
+function diffInMonths(leftTimestamp, rightTimestamp) {
+    const left = new Date(leftTimestamp);
+    const right = new Date(rightTimestamp);
+
+    let months = (left.getUTCFullYear() - right.getUTCFullYear()) * 12 + (left.getUTCMonth() - right.getUTCMonth());
+
+    const leftDay = left.getUTCDate();
+    const rightDay = right.getUTCDate();
+
+    if (months > 0 && leftDay < rightDay) {
+        months -= 1;
+    } else if (months < 0 && leftDay > rightDay) {
+        months += 1;
+    }
+
+    return months;
+}
+
+function diffInYears(leftTimestamp, rightTimestamp) {
+    const left = new Date(leftTimestamp);
+    const right = new Date(rightTimestamp);
+
+    let years = left.getUTCFullYear() - right.getUTCFullYear();
+
+    const leftMonth = left.getUTCMonth();
+    const rightMonth = right.getUTCMonth();
+    const leftDay = left.getUTCDate();
+    const rightDay = right.getUTCDate();
+
+    if (years > 0 && (leftMonth < rightMonth || (leftMonth === rightMonth && leftDay < rightDay))) {
+        years -= 1;
+    } else if (years < 0 && (leftMonth > rightMonth || (leftMonth === rightMonth && leftDay > rightDay))) {
+        years += 1;
+    }
+
+    return years;
+}
 
 export function isLeapYear(year) {
     if (!Number.isInteger(year)) {
@@ -21,13 +78,8 @@ export function daysInMonth(year, month) {
 }
 
 export function addByFixedUnit(timestamp, amount, unit) {
-    if (typeof timestamp !== 'number' || Number.isNaN(timestamp)) {
-        throw new TypeError('addByFixedUnit: timestamp must be a valid number');
-    }
-
-    if (typeof amount !== 'number' || Number.isNaN(amount)) {
-        throw new TypeError('addByFixedUnit: amount must be a valid number');
-    }
+    assertValidTimestamp(timestamp, 'addByFixedUnit');
+    assertValidAmount(amount, 'addByFixedUnit');
 
     const normalizedUnit = normalizeUnit(unit);
 
@@ -39,13 +91,8 @@ export function addByFixedUnit(timestamp, amount, unit) {
 }
 
 export function addByCalendarUnit(timestamp, amount, unit) {
-    if (typeof timestamp !== 'number' || Number.isNaN(timestamp)) {
-        throw new TypeError('addByCalendarUnit: timestamp must be a valid number');
-    }
-
-    if (typeof amount !== 'number' || Number.isNaN(amount)) {
-        throw new TypeError('addByCalendarUnit: amount must be a valid number');
-    }
+    assertValidTimestamp(timestamp, 'addByCalendarUnit');
+    assertValidAmount(amount, 'addByCalendarUnit');
 
     const normalizedUnit = normalizeUnit(unit);
     const date = new Date(timestamp);
@@ -77,4 +124,27 @@ export function addByCalendarUnit(timestamp, amount, unit) {
     }
 
     throw new Error(`addByCalendarUnit supports only month and year: ${unit}`);
+}
+
+export function diff(left, right, unit = 'millisecond') {
+    assertOzTime(left, 'left');
+    assertOzTime(right, 'right');
+
+    const normalizedUnit = normalizeUnit(unit);
+    const leftTimestamp = left.getTimestamp();
+    const rightTimestamp = right.getTimestamp();
+
+    if (isFixedUnit(normalizedUnit)) {
+        return (leftTimestamp - rightTimestamp) / unitToMilliseconds(normalizedUnit);
+    }
+
+    if (normalizedUnit === 'month') {
+        return diffInMonths(leftTimestamp, rightTimestamp);
+    }
+
+    if (normalizedUnit === 'year') {
+        return diffInYears(leftTimestamp, rightTimestamp);
+    }
+
+    throw new Error(`Unsupported unit: ${unit}`);
 }
