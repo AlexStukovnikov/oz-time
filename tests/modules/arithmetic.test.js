@@ -49,6 +49,11 @@ describe('arithmetic module', () => {
             expect(result.getLocale()).toBe('ru-RU');
         });
 
+        it('throws for unsupported normalized unit', () => {
+            const valid = new OzTime(Date.UTC(2026, 2, 5, 12, 0, 0));
+            expect(() => add(valid, 1, 'quarter')).toThrow();
+        });
+
         it('throws for invalid arguments', () => {
             const valid = new OzTime(Date.UTC(2026, 2, 5, 12, 0, 0), 'UTC', 'en-US');
 

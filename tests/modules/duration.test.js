@@ -2,6 +2,25 @@ import { describe, it, expect } from 'vitest';
 import { Duration, duration } from '../../src/modules/duration.js';
 
 describe('duration module', () => {
+    it('creates Duration directly', () => {
+        const d = new Duration(3600000);
+        expect(d.toMilliseconds()).toBe(3600000);
+        expect(d.asMilliseconds()).toBe(3600000);
+    });
+
+    it('throws for invalid constructor value', () => {
+        expect(() => new Duration('1000')).toThrow();
+        expect(() => new Duration(NaN)).toThrow();
+    });
+
+    it('creates duration from fixed units', () => {
+        const d = duration(2, 'hour');
+        expect(d.asHours()).toBe(2);
+        expect(d.asMinutes()).toBe(120);
+        expect(d.asSeconds()).toBe(7200);
+        expect(d.asDays()).toBeCloseTo(2 / 24);
+    });
+
     it('creates Duration from factory', () => {
         const d = duration(2, 'hour');
 

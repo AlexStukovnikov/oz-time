@@ -40,6 +40,24 @@ describe('compare module', () => {
             expect(isSame(a, b, 'year')).toBe(true);
         });
 
+        it('compares by second', () => {
+            const a = new OzTime(Date.UTC(2026, 2, 5, 10, 20, 30, 100));
+            const b = new OzTime(Date.UTC(2026, 2, 5, 10, 20, 30, 900));
+            expect(isSame(a, b, 'second')).toBe(true);
+        });
+
+        it('compares by year negative case', () => {
+            const a = new OzTime(Date.UTC(2026, 11, 31, 23, 59, 59));
+            const b = new OzTime(Date.UTC(2027, 0, 1, 0, 0, 0));
+            expect(isSame(a, b, 'year')).toBe(false);
+        });
+
+        it('throws for invalid unit in compare', () => {
+            const a = new OzTime(Date.UTC(2026, 2, 5));
+            const b = new OzTime(Date.UTC(2026, 2, 6));
+            expect(() => isSame(a, b, 'quarter')).toThrow();
+        });
+
         it('throws for invalid arguments', () => {
             const valid = new OzTime(Date.UTC(2026, 0, 1));
 
@@ -140,6 +158,20 @@ describe('compare module', () => {
 
             expect(isBetween(target, start, end, 'hour', '[]')).toBe(true);
             expect(isBetween(target, start, end, 'minute', '[]')).toBe(true);
+        });
+
+        it('supports [) inclusivity', () => {
+            const t = new OzTime(Date.UTC(2026, 2, 5, 12));
+            const s = new OzTime(Date.UTC(2026, 2, 5, 12));
+            const e = new OzTime(Date.UTC(2026, 2, 6, 12));
+            expect(isBetween(t, s, e, 'millisecond', '[)')).toBe(true);
+        });
+
+        it('supports (] inclusivity', () => {
+            const t = new OzTime(Date.UTC(2026, 2, 6, 12));
+            const s = new OzTime(Date.UTC(2026, 2, 5, 12));
+            const e = new OzTime(Date.UTC(2026, 2, 6, 12));
+            expect(isBetween(t, s, e, 'millisecond', '(]')).toBe(true);
         });
 
         it('throws for invalid inclusivity', () => {

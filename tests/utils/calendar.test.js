@@ -18,6 +18,10 @@ describe('calendar utils', () => {
             expect(() => isLeapYear(2024.5)).toThrow();
             expect(() => isLeapYear('2024')).toThrow();
         });
+
+        it('throws for invalid year in isLeapYear', () => {
+            expect(() => isLeapYear(NaN)).toThrow();
+        });
     });
 
     describe('daysInMonth', () => {
@@ -43,6 +47,10 @@ describe('calendar utils', () => {
             expect(() => daysInMonth('2026', 1)).toThrow();
             expect(() => daysInMonth(2026, '1')).toThrow();
             expect(() => daysInMonth(2026.5, 1)).toThrow();
+        });
+
+        it('throws for invalid year in daysInMonth', () => {
+            expect(() => daysInMonth(NaN, 2)).toThrow();
         });
     });
 
@@ -146,6 +154,18 @@ describe('calendar utils', () => {
             const right = new OzTime(Date.UTC(2026, 0, 15, 10, 0, 0));
 
             expect(diff(left, right, 'hour')).toBe(-2);
+        });
+
+        it('returns negative whole months diff', () => {
+            const left = new OzTime(Date.UTC(2026, 0, 15, 12, 0, 0));
+            const right = new OzTime(Date.UTC(2026, 2, 15, 12, 0, 0));
+            expect(diff(left, right, 'month')).toBe(-2);
+        });
+
+        it('does not count incomplete negative year', () => {
+            const left = new OzTime(Date.UTC(2024, 5, 19, 12, 0, 0));
+            const right = new OzTime(Date.UTC(2026, 5, 20, 12, 0, 0));
+            expect(diff(left, right, 'year')).toBe(-2);
         });
 
         it('returns whole calendar months', () => {

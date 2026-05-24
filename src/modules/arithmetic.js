@@ -27,8 +27,6 @@ export function add(time, amount, unit) {
         nextTimestamp = addByFixedUnit(timestamp, amount, normalizedUnit);
     } else if (isCalendarUnit(normalizedUnit)) {
         nextTimestamp = addByCalendarUnit(timestamp, amount, normalizedUnit);
-    } else {
-        throw new Error(`Unsupported unit: ${unit}`);
     }
 
     return new OzTime(nextTimestamp, time.getTimezone(), time.getLocale());
