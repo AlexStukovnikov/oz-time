@@ -1,31 +1,45 @@
 import { OzTime } from '../core/core.js';
+import { normalizeUnit } from '../utils/units.js';
+
+function assertOzTime(value, name) {
+    if (!(value instanceof OzTime)) {
+        throw new TypeError(`${name} must be OzTime`);
+    }
+}
 
 function truncateToUnit(timestamp, unit) {
+    const normalizedUnit = normalizeUnit(unit);
     const d = new Date(timestamp);
 
-    switch (unit) {
+    switch (normalizedUnit) {
         case 'millisecond':
-        case 'ms':
-            return timestamp;
+            return d.getTime();
 
         case 'second':
-        case 's':
             d.setUTCMilliseconds(0);
             break;
 
         case 'minute':
-        case 'm':
             d.setUTCSeconds(0, 0);
             break;
 
         case 'hour':
-        case 'h':
             d.setUTCMinutes(0, 0, 0);
             break;
 
         case 'day':
-        case 'd':
             d.setUTCHours(0, 0, 0, 0);
+            break;
+
+        case 'month':
+            d.setUTCHours(0, 0, 0, 0);
+            d.setUTCDate(1);
+            break;
+
+        case 'year':
+            d.setUTCHours(0, 0, 0, 0);
+            d.setUTCDate(1);
+            d.setUTCMonth(0);
             break;
 
         default:
@@ -36,36 +50,39 @@ function truncateToUnit(timestamp, unit) {
 }
 
 export function isSame(a, b, unit = 'millisecond') {
-    if (!(a instanceof OzTime) || !(b instanceof OzTime)) {
-        throw new TypeError('isSame: arguments must be OzTime');
-    }
+    assertOzTime(a, 'a');
+    assertOzTime(b, 'b');
+
     const tsA = truncateToUnit(a.getTimestamp(), unit);
     const tsB = truncateToUnit(b.getTimestamp(), unit);
+
     return tsA === tsB;
 }
 
 export function isBefore(a, b, unit = 'millisecond') {
-    if (!(a instanceof OzTime) || !(b instanceof OzTime)) {
-        throw new TypeError('isBefore: arguments must be OzTime');
-    }
+    assertOzTime(a, 'a');
+    assertOzTime(b, 'b');
+
     const tsA = truncateToUnit(a.getTimestamp(), unit);
     const tsB = truncateToUnit(b.getTimestamp(), unit);
+
     return tsA < tsB;
 }
 
 export function isAfter(a, b, unit = 'millisecond') {
-    if (!(a instanceof OzTime) || !(b instanceof OzTime)) {
-        throw new TypeError('isAfter: arguments must be OzTime');
-    }
+    assertOzTime(a, 'a');
+    assertOzTime(b, 'b');
+
     const tsA = truncateToUnit(a.getTimestamp(), unit);
     const tsB = truncateToUnit(b.getTimestamp(), unit);
+
     return tsA > tsB;
 }
 
-export function isBetween(target, left, right, unit = 'millisecond', inclusive = '[]') {
-    if (!(target instanceof OzTime) || !(left instanceof OzTime) || !(right instanceof OzTime)) {
-        throw new TypeError('isBetween: arguments must be OzTime');
-    }
+export function isBetween(target, left, right, unit = 'millisecond', inclusivity = '[]') {
+    assertOzTime(target, 'target');
+    assertOzTime(left, 'left');
+    assertOzTime(right, 'right');
 
     const t = truncateToUnit(target.getTimestamp(), unit);
     const l = truncateToUnit(left.getTimestamp(), unit);
@@ -74,7 +91,7 @@ export function isBetween(target, left, right, unit = 'millisecond', inclusive =
     const min = Math.min(l, r);
     const max = Math.max(l, r);
 
-    switch (inclusive) {
+    switch (inclusivity) {
         case '[]':
             return t >= min && t <= max;
         case '[)':
@@ -84,6 +101,6 @@ export function isBetween(target, left, right, unit = 'millisecond', inclusive =
         case '()':
             return t > min && t < max;
         default:
-            throw new Error(`Invalid inclusive value: ${inclusive}`);
+            throw new Error(`Invalid inclusivity value: ${inclusivity}`);
     }
 }

@@ -35,14 +35,5 @@ export { format } from "./modules/format.js";
 
 export {
     isLeapYear,
-    daysInMonth,
-    addByFixedUnit,
-    addByCalendarUnit
-} from "./utils/calendar.js";
-
-export {
-    normalizeUnit,
-    isFixedUnit,
-    isCalendarUnit,
-    unitToMilliseconds
-} from "./utils/units.js";
+    daysInMonth
+} from './utils/calendar.js';

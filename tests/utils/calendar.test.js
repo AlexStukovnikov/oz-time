@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isLeapYear, daysInMonth, addByFixedUnit, addByCalendarUnit } from '../../src/utils/calendar.js';
+import { OzTime } from '../../src/core/core.js';
+import { isLeapYear, daysInMonth, addByFixedUnit, addByCalendarUnit, diff } from '../../src/utils/calendar.js';
 
 describe('calendar utils', () => {
     describe('isLeapYear', () => {
@@ -83,35 +84,35 @@ describe('calendar utils', () => {
 
     describe('addByCalendarUnit', () => {
         it('adds one month preserving calendar logic', () => {
-            const ts = Date.UTC(2026, 0, 31, 12, 0, 0); // 31 Jan 2026
+            const ts = Date.UTC(2026, 0, 31, 12, 0, 0);
             const result = addByCalendarUnit(ts, 1, 'month');
 
             expect(result).toBe(Date.UTC(2026, 1, 28, 12, 0, 0));
         });
 
         it('adds one month in leap year February correctly', () => {
-            const ts = Date.UTC(2024, 0, 31, 12, 0, 0); // 31 Jan 2024
+            const ts = Date.UTC(2024, 0, 31, 12, 0, 0);
             const result = addByCalendarUnit(ts, 1, 'month');
 
             expect(result).toBe(Date.UTC(2024, 1, 29, 12, 0, 0));
         });
 
         it('adds one year preserving month and day when possible', () => {
-            const ts = Date.UTC(2026, 2, 1, 12, 0, 0); // 1 Mar 2026
+            const ts = Date.UTC(2026, 2, 1, 12, 0, 0);
             const result = addByCalendarUnit(ts, 1, 'year');
 
             expect(result).toBe(Date.UTC(2027, 2, 1, 12, 0, 0));
         });
 
         it('handles leap day when adding years', () => {
-            const ts = Date.UTC(2024, 1, 29, 12, 0, 0); // 29 Feb 2024
+            const ts = Date.UTC(2024, 1, 29, 12, 0, 0);
             const result = addByCalendarUnit(ts, 1, 'year');
 
             expect(result).toBe(Date.UTC(2025, 1, 28, 12, 0, 0));
         });
 
         it('supports negative amounts', () => {
-            const ts = Date.UTC(2026, 2, 31, 12, 0, 0); // 31 Mar 2026
+            const ts = Date.UTC(2026, 2, 31, 12, 0, 0);
             const result = addByCalendarUnit(ts, -1, 'month');
 
             expect(result).toBe(Date.UTC(2026, 1, 28, 12, 0, 0));
@@ -128,6 +129,66 @@ describe('calendar utils', () => {
             expect(() => addByCalendarUnit('bad', 1, 'month')).toThrow();
             expect(() => addByCalendarUnit(Date.UTC(2026, 0, 15), '1', 'month')).toThrow();
             expect(() => addByCalendarUnit(Date.UTC(2026, 0, 15), 1, 'unknown')).toThrow();
+        });
+    });
+
+    describe('diff', () => {
+        it('returns diff in fixed units', () => {
+            const left = new OzTime(Date.UTC(2026, 0, 15, 12, 0, 0));
+            const right = new OzTime(Date.UTC(2026, 0, 15, 10, 0, 0));
+
+            expect(diff(left, right, 'hour')).toBe(2);
+            expect(diff(left, right, 'minute')).toBe(120);
+        });
+
+        it('returns negative diff when left is before right', () => {
+            const left = new OzTime(Date.UTC(2026, 0, 15, 8, 0, 0));
+            const right = new OzTime(Date.UTC(2026, 0, 15, 10, 0, 0));
+
+            expect(diff(left, right, 'hour')).toBe(-2);
+        });
+
+        it('returns whole calendar months', () => {
+            const left = new OzTime(Date.UTC(2026, 2, 15, 12, 0, 0));
+            const right = new OzTime(Date.UTC(2026, 0, 15, 12, 0, 0));
+
+            expect(diff(left, right, 'month')).toBe(2);
+        });
+
+        it('does not count incomplete month', () => {
+            const left = new OzTime(Date.UTC(2026, 2, 10, 12, 0, 0));
+            const right = new OzTime(Date.UTC(2026, 0, 15, 12, 0, 0));
+
+            expect(diff(left, right, 'month')).toBe(1);
+        });
+
+        it('returns whole calendar years', () => {
+            const left = new OzTime(Date.UTC(2026, 5, 20, 12, 0, 0));
+            const right = new OzTime(Date.UTC(2024, 5, 20, 12, 0, 0));
+
+            expect(diff(left, right, 'year')).toBe(2);
+        });
+
+        it('does not count incomplete year', () => {
+            const left = new OzTime(Date.UTC(2026, 4, 1, 12, 0, 0));
+            const right = new OzTime(Date.UTC(2024, 5, 20, 12, 0, 0));
+
+            expect(diff(left, right, 'year')).toBe(1);
+        });
+
+        it('supports unit aliases for fixed units', () => {
+            const left = new OzTime(Date.UTC(2026, 0, 15, 12, 0, 0));
+            const right = new OzTime(Date.UTC(2026, 0, 15, 10, 0, 0));
+
+            expect(diff(left, right, 'h')).toBe(2);
+        });
+
+        it('throws for invalid arguments', () => {
+            const valid = new OzTime(Date.UTC(2026, 0, 1, 0, 0, 0));
+
+            expect(() => diff(valid, {}, 'day')).toThrow();
+            expect(() => diff({}, valid, 'day')).toThrow();
+            expect(() => diff(valid, valid, 'unknown')).toThrow();
         });
     });
 });

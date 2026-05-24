@@ -35,5 +35,8 @@ export function add(time, amount, unit) {
 }
 
 export function subtract(time, amount, unit) {
+    assertOzTime(time, 'time');
+    assertAmount(amount);
+
     return add(time, -amount, unit);
 }

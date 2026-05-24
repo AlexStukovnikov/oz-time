@@ -1,36 +1,114 @@
-// tests/core/factory.test.js
 import { describe, it, expect } from 'vitest';
-import { now, fromTimestamp, fromDate, fromISO, fromComponents } from '../../src/core/factory.js';
 import { OzTime } from '../../src/core/core.js';
+import { now, fromTimestamp, fromDate, fromISO, fromComponents } from '../../src/core/factory.js';
 
-describe('factory', () => {
-    it('now returns OzTime', () => {
-        const t = now();
-        expect(t).toBeInstanceOf(OzTime);
+describe('factory module', () => {
+    describe('now', () => {
+        it('creates OzTime instance with current timestamp', () => {
+            const before = Date.now();
+            const result = now('UTC', 'en-US');
+            const after = Date.now();
+
+            expect(result).toBeInstanceOf(OzTime);
+            expect(result.getTimezone()).toBe('UTC');
+            expect(result.getLocale()).toBe('en-US');
+            expect(result.getTimestamp()).toBeGreaterThanOrEqual(before);
+            expect(result.getTimestamp()).toBeLessThanOrEqual(after);
+        });
     });
 
-    it('fromTimestamp uses given timestamp', () => {
-        const ts = 1234567890;
-        const t = fromTimestamp(ts);
-        expect(t.getTimestamp()).toBe(ts);
+    describe('fromTimestamp', () => {
+        it('creates OzTime from valid timestamp', () => {
+            const ts = Date.UTC(2026, 2, 5, 12, 0, 0);
+            const result = fromTimestamp(ts, 'Europe/Moscow', 'ru-RU');
+
+            expect(result).toBeInstanceOf(OzTime);
+            expect(result.getTimestamp()).toBe(ts);
+            expect(result.getTimezone()).toBe('Europe/Moscow');
+            expect(result.getLocale()).toBe('ru-RU');
+        });
+
+        it('throws for invalid timestamp', () => {
+            expect(() => fromTimestamp('123')).toThrow();
+            expect(() => fromTimestamp(NaN)).toThrow();
+        });
     });
 
-    it('fromDate accepts Date instance', () => {
-        const d = new Date('2026-03-01T00:00:00.000Z');
-        const t = fromDate(d);
-        expect(t).toBeInstanceOf(OzTime);
-        expect(t.getTimestamp()).toBe(d.getTime());
+    describe('fromDate', () => {
+        it('creates OzTime from valid Date', () => {
+            const date = new Date(Date.UTC(2026, 2, 5, 12, 0, 0));
+            const result = fromDate(date, 'UTC', 'en-US');
+
+            expect(result).toBeInstanceOf(OzTime);
+            expect(result.getTimestamp()).toBe(date.getTime());
+        });
+
+        it('throws for invalid Date', () => {
+            expect(() => fromDate('2026-03-05')).toThrow();
+            expect(() => fromDate(new Date('invalid'))).toThrow();
+            expect(() => fromDate({})).toThrow();
+        });
     });
 
-    it('fromISO parses ISO string', () => {
-        const iso = '2026-03-01T00:00:00.000Z';
-        const t = fromISO(iso);
-        expect(t.getTimestamp()).toBe(Date.parse(iso));
+    describe('fromISO', () => {
+        it('creates OzTime from valid ISO string', () => {
+            const result = fromISO('2026-03-05T12:00:00.000Z', 'UTC', 'en-US');
+
+            expect(result).toBeInstanceOf(OzTime);
+            expect(result.toISOString()).toBe('2026-03-05T12:00:00.000Z');
+        });
+
+        it('throws for invalid ISO string', () => {
+            expect(() => fromISO('not-a-date')).toThrow();
+            expect(() => fromISO('')).toThrow();
+            expect(() => fromISO('   ')).toThrow();
+        });
     });
 
-    it('fromComponents builds correct date', () => {
-        const t = fromComponents(2026, 3, 1);
-        const expected = Date.UTC(2026, 2, 1);
-        expect(t.getTimestamp()).toBe(expected);
+    describe('fromComponents', () => {
+        it('creates OzTime from valid components', () => {
+            const result = fromComponents(2026, 3, 5, 12, 30, 15, 123, 'UTC', 'en-US');
+
+            expect(result).toBeInstanceOf(OzTime);
+            expect(result.toISOString()).toBe('2026-03-05T12:30:15.123Z');
+            expect(result.getTimezone()).toBe('UTC');
+            expect(result.getLocale()).toBe('en-US');
+        });
+
+        it('creates OzTime with default time parts', () => {
+            const result = fromComponents(2026, 3, 5);
+
+            expect(result.toISOString()).toBe('2026-03-05T00:00:00.000Z');
+        });
+
+        it('supports leap day', () => {
+            const result = fromComponents(2024, 2, 29);
+
+            expect(result.toISOString()).toBe('2024-02-29T00:00:00.000Z');
+        });
+
+        it('throws for invalid component types', () => {
+            expect(() => fromComponents('2026', 3, 5)).toThrow();
+            expect(() => fromComponents(2026, '3', 5)).toThrow();
+            expect(() => fromComponents(2026, 3, '5')).toThrow();
+        });
+
+        it('throws for invalid month', () => {
+            expect(() => fromComponents(2026, 0, 5)).toThrow();
+            expect(() => fromComponents(2026, 13, 5)).toThrow();
+        });
+
+        it('throws for invalid day', () => {
+            expect(() => fromComponents(2026, 2, 29)).toThrow();
+            expect(() => fromComponents(2026, 4, 31)).toThrow();
+            expect(() => fromComponents(2026, 3, 0)).toThrow();
+        });
+
+        it('throws for invalid time parts', () => {
+            expect(() => fromComponents(2026, 3, 5, 24)).toThrow();
+            expect(() => fromComponents(2026, 3, 5, 12, 60)).toThrow();
+            expect(() => fromComponents(2026, 3, 5, 12, 30, 60)).toThrow();
+            expect(() => fromComponents(2026, 3, 5, 12, 30, 15, 1000)).toThrow();
+        });
     });
 });

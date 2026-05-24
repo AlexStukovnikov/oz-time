@@ -1,5 +1,5 @@
 import { OzTime } from '../core/core.js';
-import { isFixedUnit, unitToMilliseconds } from '../utils/units.js';
+import { normalizeUnit, isFixedUnit, unitToMilliseconds } from '../utils/units.js';
 
 function assertOzTime(value, name) {
     if (!(value instanceof OzTime)) {
@@ -49,12 +49,14 @@ export class Interval {
     }
 
     duration(unit = 'millisecond') {
-        if (!isFixedUnit(unit)) {
+        const normalizedUnit = normalizeUnit(unit);
+
+        if (!isFixedUnit(normalizedUnit)) {
             throw new Error(`Interval.duration supports only fixed units: ${unit}`);
         }
 
         const diffMs = this._end.getTimestamp() - this._start.getTimestamp();
-        return diffMs / unitToMilliseconds(unit);
+        return diffMs / unitToMilliseconds(normalizedUnit);
     }
 }
 
