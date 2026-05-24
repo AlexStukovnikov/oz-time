@@ -1,41 +1,80 @@
+import { normalizeUnit, isFixedUnit, unitToMilliseconds } from './units.js';
+
 export function isLeapYear(year) {
-    if (year % 400 === 0) return true;
-    if (year % 100 === 0) return false;
-    return year % 4 === 0;
+    if (!Number.isInteger(year)) {
+        throw new TypeError('isLeapYear: year must be an integer');
+    }
+
+    return year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
 }
 
 export function daysInMonth(year, month) {
-    const thirtyOne = [1, 3, 5, 7, 8, 10, 12];
-    if (month === 2) {
-        return isLeapYear(year) ? 29 : 28;
+    if (!Number.isInteger(year) || !Number.isInteger(month)) {
+        throw new TypeError('daysInMonth: year and month must be integers');
     }
-    if (thirtyOne.includes(month)) return 31;
-    return 30;
+
+    if (month < 1 || month > 12) {
+        throw new RangeError('daysInMonth: month must be between 1 and 12');
+    }
+
+    return new Date(Date.UTC(year, month, 0)).getUTCDate();
 }
 
-const MS_SECOND = 1000;
-const MS_MINUTE = MS_SECOND * 60;
-const MS_HOUR = MS_MINUTE * 60;
-const MS_DAY = MS_HOUR * 24;
-
 export function addByFixedUnit(timestamp, amount, unit) {
-    switch (unit) {
-        case 'millisecond':
-        case 'ms':
-            return timestamp + amount;
-        case 'second':
-        case 's':
-            return timestamp + amount * MS_SECOND;
-        case 'minute':
-        case 'm':
-            return timestamp + amount * MS_MINUTE;
-        case 'hour':
-        case 'h':
-            return timestamp + amount * MS_HOUR;
-        case 'day':
-        case 'd':
-            return timestamp + amount * MS_DAY;
-        default:
-            throw new Error(`Unsupported fixed unit: ${unit}`);
+    if (typeof timestamp !== 'number' || Number.isNaN(timestamp)) {
+        throw new TypeError('addByFixedUnit: timestamp must be a valid number');
     }
+
+    if (typeof amount !== 'number' || Number.isNaN(amount)) {
+        throw new TypeError('addByFixedUnit: amount must be a valid number');
+    }
+
+    const normalizedUnit = normalizeUnit(unit);
+
+    if (!isFixedUnit(normalizedUnit)) {
+        throw new Error(`addByFixedUnit does not support calendar unit: ${unit}`);
+    }
+
+    return timestamp + amount * unitToMilliseconds(normalizedUnit);
+}
+
+export function addByCalendarUnit(timestamp, amount, unit) {
+    if (typeof timestamp !== 'number' || Number.isNaN(timestamp)) {
+        throw new TypeError('addByCalendarUnit: timestamp must be a valid number');
+    }
+
+    if (typeof amount !== 'number' || Number.isNaN(amount)) {
+        throw new TypeError('addByCalendarUnit: amount must be a valid number');
+    }
+
+    const normalizedUnit = normalizeUnit(unit);
+    const date = new Date(timestamp);
+
+    if (normalizedUnit === 'month') {
+        const originalDay = date.getUTCDate();
+
+        date.setUTCDate(1);
+        date.setUTCMonth(date.getUTCMonth() + amount);
+
+        const maxDay = daysInMonth(date.getUTCFullYear(), date.getUTCMonth() + 1);
+        date.setUTCDate(Math.min(originalDay, maxDay));
+
+        return date.getTime();
+    }
+
+    if (normalizedUnit === 'year') {
+        const originalMonth = date.getUTCMonth();
+        const originalDay = date.getUTCDate();
+
+        date.setUTCDate(1);
+        date.setUTCFullYear(date.getUTCFullYear() + amount);
+        date.setUTCMonth(originalMonth);
+
+        const maxDay = daysInMonth(date.getUTCFullYear(), originalMonth + 1);
+        date.setUTCDate(Math.min(originalDay, maxDay));
+
+        return date.getTime();
+    }
+
+    throw new Error(`addByCalendarUnit supports only month and year: ${unit}`);
 }

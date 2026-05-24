@@ -10,12 +10,6 @@ export {
 export { add, subtract } from "./modules/arithmetic.js";
 
 export {
-    isLeapYear,
-    daysInMonth,
-    addByFixedUnit
-} from "./utils/calendar.js";
-
-export {
     isSame,
     isBefore,
     isAfter,
@@ -26,3 +20,22 @@ export {
     setTimezone,
     getTimezoneOffset
 } from "./modules/timezone.js";
+
+export {
+    Interval,
+    interval
+} from "./modules/interval.js";
+
+export {
+    isLeapYear,
+    daysInMonth,
+    addByFixedUnit,
+    addByCalendarUnit
+} from "./utils/calendar.js";
+
+export {
+    normalizeUnit,
+    isFixedUnit,
+    isCalendarUnit,
+    unitToMilliseconds
+} from "./utils/units.js";
