@@ -27,6 +27,11 @@ export {
 } from "./modules/interval.js";
 
 export {
+    Duration,
+    duration
+} from "./modules/duration.js";
+
+export {
     isLeapYear,
     daysInMonth,
     addByFixedUnit,
