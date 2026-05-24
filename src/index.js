@@ -8,6 +8,7 @@ export {
 } from './core/factory.js';
 
 export { add, subtract } from "./modules/arithmetic.js";
+
 export {
     isLeapYear,
     daysInMonth,
@@ -20,3 +21,8 @@ export {
     isAfter,
     isBetween
 } from "./modules/compare.js";
+
+export {
+    setTimezone,
+    getTimezoneOffset
+} from "./modules/timezone.js";
