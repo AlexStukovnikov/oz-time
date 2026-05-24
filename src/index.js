@@ -31,6 +31,8 @@ export {
     duration
 } from "./modules/duration.js";
 
+export { format } from "./modules/format.js";
+
 export {
     isLeapYear,
     daysInMonth,
