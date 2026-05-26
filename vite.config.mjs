@@ -5,17 +5,18 @@ export default defineConfig({
         lib: {
             entry: 'src/index.js',
             name: 'OzTime',
-            fileName: (format) => `oz-time.${format}.js`,
             formats: ['es', 'cjs'],
-        },
-        rollupOptions: {
-            external: [],
-            output: {
-                globals: {},
+            fileName: (format) => {
+                if (format === 'es') return 'oz-time.esm.js';
+                if (format === 'cjs') return 'oz-time.cjs';
+                return `oz-time.${format}.js`;
             },
         },
         target: 'es2021',
         sourcemap: true,
+        rollupOptions: {
+            external: [],
+        },
     },
     test: {
         environment: 'node',
@@ -23,6 +24,7 @@ export default defineConfig({
         coverage: {
             reporter: ['text', 'html'],
             reportsDirectory: 'coverage',
+            exclude: ['src/index.js', 'tests/**/*', 'dist/**/*'],
         },
     },
 });

@@ -4,6 +4,7 @@ node_modules/
 # Сборки
 dist/
 dist-ssr/
+docs/
 build/
 
 # Кэш Vite

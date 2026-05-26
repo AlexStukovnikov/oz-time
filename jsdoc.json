@@ -1,0 +1,32 @@
+{
+    "source": {
+        "include": ["src", "README.md"],
+        "includePattern": ".+\\.js$",
+        "excludePattern": "(^|\\/|\\\\)_|node_modules|dist|coverage|tests"
+    },
+    "opts": {
+        "destination": "./docs",
+        "recurse": true,
+        "readme": "./README.md",
+        "template": "node_modules/docdash"
+    },
+    "plugins": ["plugins/markdown"],
+    "templates": {
+        "default": {
+            "includeDate": false,
+            "useLongnameInNav": true
+        },
+        "docdash": {
+            "static": false,
+            "sort": true,
+            "search": true,
+            "collapse": false,
+            "typedefs": true,
+            "removeQuotes": "none",
+            "sectionOrder": ["Modules", "Classes", "Externals", "Events", "Namespaces", "Mixins", "Tutorials", "Interfaces", "Global"]
+        }
+    },
+    "markdown": {
+        "idInHeadings": true
+    }
+}

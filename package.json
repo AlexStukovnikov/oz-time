@@ -1,7 +1,11 @@
 {
     "name": "oz-time",
     "version": "1.0.0",
-    "description": "Immutable, modular JS date/time library",
+    "description": "Lightweight JavaScript date-time library",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AlexStukovnikov/oz-time.git"
+    },
     "type": "module",
     "main": "./dist/oz-time.cjs",
     "module": "./dist/oz-time.esm.js",
@@ -11,18 +15,33 @@
             "require": "./dist/oz-time.cjs"
         }
     },
+    "files": [
+        "dist"
+    ],
+    "sideEffects": false,
     "scripts": {
         "dev": "vite",
         "build": "vite build",
         "test": "vitest",
         "test:run": "vitest run",
-        "test:coverage": "vitest run --coverage"
+        "test:coverage": "vitest run --coverage",
+        "docs": "jsdoc -c jsdoc.json",
+        "docs:clean": "rimraf docs",
+        "docs:build": "npm run docs:clean && npm run docs",
+        "prepublishOnly": "npm run build"
     },
-    "keywords": [],
+    "keywords": [
+        "date",
+        "time",
+        "datetime"
+    ],
     "author": "",
     "license": "ISC",
     "devDependencies": {
         "@vitest/coverage-v8": "^4.1.7",
+        "@vitest/ui": "^4.1.7",
+        "docdash": "^2.0.2",
+        "jsdoc": "^4.0.5",
         "vite": "^8.0.14",
         "vitest": "^4.1.7"
     }

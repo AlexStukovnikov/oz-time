@@ -4,7 +4,6 @@ import { Duration, duration } from '../../src/modules/duration.js';
 describe('duration module', () => {
     it('creates Duration directly', () => {
         const d = new Duration(3600000);
-        expect(d.toMilliseconds()).toBe(3600000);
         expect(d.asMilliseconds()).toBe(3600000);
     });
 

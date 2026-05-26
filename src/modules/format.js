@@ -1,15 +1,45 @@
 import { OzTime } from '../core/core.js';
 
+/**
+ * Модуль форматирования экземпляров {@link OzTime}.
+ *
+ * @module modules/format
+ */
+
+/**
+ * Проверяет, является ли значение экземпляром OzTime.
+ *
+ * @private
+ * @param {*} value - Проверяемое значение.
+ * @throws {TypeError} Выбрасывается, если значение не является экземпляром OzTime.
+ * @returns {void}
+ */
 function assertOzTime(value) {
     if (!(value instanceof OzTime)) {
         throw new TypeError('format: first argument must be OzTime');
     }
 }
 
+/**
+ * Дополняет значение ведущими нулями до нужной длины.
+ *
+ * @private
+ * @param {string|number} value - Исходное значение.
+ * @param {number} [length=2] - Итоговая длина строки.
+ * @returns {string} Строка, дополненная ведущими нулями.
+ */
 function pad(value, length = 2) {
     return String(value).padStart(length, '0');
 }
 
+/**
+ * Возвращает числовые части даты для форматирования.
+ *
+ * @private
+ * @param {OzTime} time - Экземпляр времени.
+ * @param {string} locale - Локаль форматирования.
+ * @returns {Object.<string, string>} Объект с числовыми частями даты и времени.
+ */
 function getNumericParts(time, locale) {
     const formatter = new Intl.DateTimeFormat(locale, {
         timeZone: time.getTimezone(),
@@ -26,6 +56,15 @@ function getNumericParts(time, locale) {
     return Object.fromEntries(parts.map((part) => [part.type, part.value]));
 }
 
+/**
+ * Возвращает название месяца в нужном формате.
+ *
+ * @private
+ * @param {OzTime} time - Экземпляр времени.
+ * @param {string} locale - Локаль форматирования.
+ * @param {'long'|'short'|'narrow'} length - Длина названия месяца.
+ * @returns {string} Название месяца.
+ */
 function getMonthName(time, locale, length) {
     return new Intl.DateTimeFormat(locale, {
         timeZone: time.getTimezone(),
@@ -33,6 +72,15 @@ function getMonthName(time, locale, length) {
     }).format(new Date(time.getTimestamp()));
 }
 
+/**
+ * Возвращает название дня недели в нужном формате.
+ *
+ * @private
+ * @param {OzTime} time - Экземпляр времени.
+ * @param {string} locale - Локаль форматирования.
+ * @param {'long'|'short'|'narrow'} length - Длина названия дня недели.
+ * @returns {string} Название дня недели.
+ */
 function getWeekdayName(time, locale, length) {
     return new Intl.DateTimeFormat(locale, {
         timeZone: time.getTimezone(),
@@ -40,6 +88,24 @@ function getWeekdayName(time, locale, length) {
     }).format(new Date(time.getTimestamp()));
 }
 
+/**
+ * Возвращает строковое представление экземпляра {@link OzTime}
+ * по заданному шаблону с токенами.
+ *
+ * Поддерживаются токены `YYYY`, `YY`, `MMMM`, `MMM`, `MM`, `M`, `dddd`, `ddd`,
+ * `DD`, `D`, `HH`, `H`, `hh`, `h`, `mm`, `ss`, `SSS` и `A`.
+ *
+ * @param {OzTime} time - Экземпляр времени для форматирования.
+ * @param {string} template - Шаблон форматирования.
+ * @param {string} [locale] - Необязательное переопределение локали.
+ * @throws {TypeError} Выбрасывается, если первый аргумент не является экземпляром OzTime или template некорректен.
+ * @returns {string} Отформатированная строка.
+ * @example
+ * import { format, fromISO } from 'oz-time';
+ *
+ * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
+ * console.log(format(time, 'DD.MM.YYYY HH:mm')); // ожидаемый результат: 25.05.2024 12:00
+ */
 export function format(time, template, locale) {
     assertOzTime(time);
 

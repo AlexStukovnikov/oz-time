@@ -1,13 +1,48 @@
 import { OzTime } from '../core/core.js';
 import { normalizeUnit, isFixedUnit, unitToMilliseconds } from '../utils/units.js';
 
+/**
+ * Модуль интервалов времени.
+ *
+ * @module modules/interval
+ */
+
+/**
+ * Проверяет, является ли значение экземпляром OzTime.
+ *
+ * @private
+ * @param {*} value - Проверяемое значение.
+ * @param {string} name - Имя параметра.
+ * @throws {TypeError} Выбрасывается, если значение не является экземпляром OzTime.
+ * @returns {void}
+ */
 function assertOzTime(value, name) {
     if (!(value instanceof OzTime)) {
         throw new TypeError(`${name} must be OzTime`);
     }
 }
 
+/**
+ * Представляет замкнутый интервал между двумя значениями времени.
+ *
+ * @class
+ * @example
+ * import { Interval, fromISO } from 'oz-time';
+ *
+ * const start = fromISO('2024-05-25T10:00:00Z');
+ * const end = fromISO('2024-05-25T12:00:00Z');
+ * const range = new Interval(start, end);
+ * console.log(range.contains(fromISO('2024-05-25T11:00:00Z'))); // ожидаемый результат: true
+ */
 export class Interval {
+    /**
+     * Создаёт новый экземпляр Interval.
+     *
+     * @param {OzTime} start - Начало интервала.
+     * @param {OzTime} end - Конец интервала.
+     * @throws {TypeError} Выбрасывается, если start или end не являются экземплярами OzTime.
+     * @throws {RangeError} Выбрасывается, если start больше end.
+     */
     constructor(start, end) {
         assertOzTime(start, 'start');
         assertOzTime(end, 'end');
@@ -20,14 +55,55 @@ export class Interval {
         this._end = end;
     }
 
+    /**
+     * Возвращает начало интервала.
+     *
+     * @returns {OzTime} Начальная граница интервала.
+     * @example
+     * import { Interval, fromISO } from 'oz-time';
+     *
+     * const range = new Interval(
+     *   fromISO('2024-05-25T10:00:00Z'),
+     *   fromISO('2024-05-25T12:00:00Z')
+     * );
+     * console.log(range.getStart().toISOString()); // ожидаемый результат: 2024-05-25T10:00:00.000Z
+     */
     getStart() {
         return this._start;
     }
 
+    /**
+     * Возвращает конец интервала.
+     *
+     * @returns {OzTime} Конечная граница интервала.
+     * @example
+     * import { Interval, fromISO } from 'oz-time';
+     *
+     * const range = new Interval(
+     *   fromISO('2024-05-25T10:00:00Z'),
+     *   fromISO('2024-05-25T12:00:00Z')
+     * );
+     * console.log(range.getEnd().toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z
+     */
     getEnd() {
         return this._end;
     }
 
+    /**
+     * Проверяет, содержит ли интервал переданное значение времени.
+     *
+     * @param {OzTime} moment - Проверяемое значение.
+     * @throws {TypeError} Выбрасывается, если moment не является экземпляром OzTime.
+     * @returns {boolean} `true`, если значение входит в интервал.
+     * @example
+     * import { Interval, fromISO } from 'oz-time';
+     *
+     * const range = new Interval(
+     *   fromISO('2024-05-25T10:00:00Z'),
+     *   fromISO('2024-05-25T12:00:00Z')
+     * );
+     * console.log(range.contains(fromISO('2024-05-25T11:00:00Z'))); // ожидаемый результат: true
+     */
     contains(moment) {
         assertOzTime(moment, 'moment');
 
@@ -35,6 +111,25 @@ export class Interval {
         return ts >= this._start.getTimestamp() && ts <= this._end.getTimestamp();
     }
 
+    /**
+     * Проверяет, пересекается ли текущий интервал с другим интервалом.
+     *
+     * @param {Interval} other - Второй интервал.
+     * @throws {TypeError} Выбрасывается, если other не является экземпляром Interval.
+     * @returns {boolean} `true`, если интервалы пересекаются.
+     * @example
+     * import { Interval, fromISO } from 'oz-time';
+     *
+     * const a = new Interval(
+     *   fromISO('2024-05-25T10:00:00Z'),
+     *   fromISO('2024-05-25T12:00:00Z')
+     * );
+     * const b = new Interval(
+     *   fromISO('2024-05-25T11:00:00Z'),
+     *   fromISO('2024-05-25T13:00:00Z')
+     * );
+     * console.log(a.overlaps(b)); // ожидаемый результат: true
+     */
     overlaps(other) {
         if (!(other instanceof Interval)) {
             throw new TypeError('other must be Interval');
@@ -48,6 +143,21 @@ export class Interval {
         return startA <= endB && startB <= endA;
     }
 
+    /**
+     * Возвращает длительность интервала в фиксированной единице времени.
+     *
+     * @param {string} [unit='millisecond'] - Фиксированная единица времени.
+     * @throws {Error} Выбрасывается, если unit не является фиксированной единицей времени.
+     * @returns {number} Длительность интервала в указанной единице.
+     * @example
+     * import { Interval, fromISO } from 'oz-time';
+     *
+     * const range = new Interval(
+     *   fromISO('2024-05-25T10:00:00Z'),
+     *   fromISO('2024-05-25T12:00:00Z')
+     * );
+     * console.log(range.duration('hour')); // ожидаемый результат: 2
+     */
     duration(unit = 'millisecond') {
         const normalizedUnit = normalizeUnit(unit);
 
@@ -60,6 +170,21 @@ export class Interval {
     }
 }
 
+/**
+ * Создаёт и возвращает экземпляр {@link Interval}.
+ *
+ * @param {OzTime} start - Начало интервала.
+ * @param {OzTime} end - Конец интервала.
+ * @returns {Interval} Новый экземпляр Interval.
+ * @example
+ * import { interval, fromISO } from 'oz-time';
+ *
+ * const range = interval(
+ *   fromISO('2024-05-25T10:00:00Z'),
+ *   fromISO('2024-05-25T12:00:00Z')
+ * );
+ * console.log(range.duration('hour')); // ожидаемый результат: 2
+ */
 export function interval(start, end) {
     return new Interval(start, end);
 }
