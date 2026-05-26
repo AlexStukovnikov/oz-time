@@ -97,7 +97,7 @@ function assertAmount(amount) {
  * @throws {TypeError} Выбрасывается, если time или amount некорректны.
  * @returns {OzTime} Новый экземпляр OzTime с timestamp, сдвинутым вперёд.
  * @example
- * import { add, fromISO } from 'oz-time';
+ * import { add, fromISO } from '@alexstukovnikov/oz-time';
  *
  * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
  * const result = add(time, 2, 'day');
@@ -133,7 +133,7 @@ export function add(time, amount, unit) {
  * @throws {TypeError} Выбрасывается, если time или amount некорректны.
  * @returns {OzTime} Новый экземпляр OzTime с timestamp, сдвинутым назад.
  * @example
- * import { subtract, fromISO } from 'oz-time';
+ * import { subtract, fromISO } from '@alexstukovnikov/oz-time';
  *
  * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
  * const result = subtract(time, 3, 'hour');

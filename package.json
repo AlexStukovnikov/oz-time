@@ -1,5 +1,5 @@
 {
-    "name": "oz-time",
+    "name": "@alexstukovnikov/oz-time",
     "version": "1.0.0",
     "description": "Lightweight JavaScript date-time library",
     "repository": {

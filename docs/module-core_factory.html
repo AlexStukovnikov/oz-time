@@ -230,7 +230,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromComponents } from 'oz-time';const time = fromComponents(2024, 5, 25, 12, 0, 0, 0, 'UTC', 'ru-RU');console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z</code></pre>
+    <pre class="prettyprint"><code>import { fromComponents } from '@alexstukovnikov/oz-time';const time = fromComponents(2024, 5, 25, 12, 0, 0, 0, 'UTC', 'ru-RU');console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z</code></pre>
 
 
 
@@ -779,7 +779,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromDate } from 'oz-time';const time = fromDate(new Date('2024-05-25T12:00:00Z'), 'UTC', 'ru-RU');console.log(time.toTimestamp()); // ожидаемый результат: 1716638400000</code></pre>
+    <pre class="prettyprint"><code>import { fromDate } from '@alexstukovnikov/oz-time';const time = fromDate(new Date('2024-05-25T12:00:00Z'), 'UTC', 'ru-RU');console.log(time.toTimestamp()); // ожидаемый результат: 1716638400000</code></pre>
 
 
 
@@ -1068,7 +1068,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');console.log(time.format('DD.MM.YYYY HH:mm')); // ожидаемый результат: 25.05.2024 12:00</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');console.log(time.format('DD.MM.YYYY HH:mm')); // ожидаемый результат: 25.05.2024 12:00</code></pre>
 
 
 
@@ -1385,7 +1385,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromTimestamp } from 'oz-time';const time = fromTimestamp(1716638400000, 'UTC', 'ru-RU');console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z</code></pre>
+    <pre class="prettyprint"><code>import { fromTimestamp } from '@alexstukovnikov/oz-time';const time = fromTimestamp(1716638400000, 'UTC', 'ru-RU');console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z</code></pre>
 
 
 
@@ -1674,7 +1674,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { now } from 'oz-time';const current = now('Europe/Moscow', 'ru-RU');console.log(current.getTimezone()); // ожидаемый результат: Europe/Moscow</code></pre>
+    <pre class="prettyprint"><code>import { now } from '@alexstukovnikov/oz-time';const current = now('Europe/Moscow', 'ru-RU');console.log(current.getTimezone()); // ожидаемый результат: Europe/Moscow</code></pre>
 
 
 

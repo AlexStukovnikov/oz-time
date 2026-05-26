@@ -231,7 +231,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { isAfter, fromISO } from 'oz-time';const a = fromISO('2024-05-26T12:00:00Z');const b = fromISO('2024-05-25T12:00:00Z');console.log(isAfter(a, b)); // ожидаемый результат: true</code></pre>
+    <pre class="prettyprint"><code>import { isAfter, fromISO } from '@alexstukovnikov/oz-time';const a = fromISO('2024-05-26T12:00:00Z');const b = fromISO('2024-05-25T12:00:00Z');console.log(isAfter(a, b)); // ожидаемый результат: true</code></pre>
 
 
 
@@ -517,7 +517,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { isBefore, fromISO } from 'oz-time';const a = fromISO('2024-05-25T12:00:00Z');const b = fromISO('2024-05-26T12:00:00Z');console.log(isBefore(a, b)); // ожидаемый результат: true</code></pre>
+    <pre class="prettyprint"><code>import { isBefore, fromISO } from '@alexstukovnikov/oz-time';const a = fromISO('2024-05-25T12:00:00Z');const b = fromISO('2024-05-26T12:00:00Z');console.log(isBefore(a, b)); // ожидаемый результат: true</code></pre>
 
 
 
@@ -803,7 +803,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { isBetween, fromISO } from 'oz-time';const target = fromISO('2024-05-25T12:00:00Z');const start = fromISO('2024-05-25T10:00:00Z');const end = fromISO('2024-05-25T14:00:00Z');console.log(isBetween(target, start, end)); // ожидаемый результат: true</code></pre>
+    <pre class="prettyprint"><code>import { isBetween, fromISO } from '@alexstukovnikov/oz-time';const target = fromISO('2024-05-25T12:00:00Z');const start = fromISO('2024-05-25T10:00:00Z');const end = fromISO('2024-05-25T14:00:00Z');console.log(isBetween(target, start, end)); // ожидаемый результат: true</code></pre>
 
 
 
@@ -1201,7 +1201,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { isSame, fromISO } from 'oz-time';const a = fromISO('2024-05-25T12:00:00.100Z');const b = fromISO('2024-05-25T12:00:00.900Z');console.log(isSame(a, b, 'second')); // ожидаемый результат: true</code></pre>
+    <pre class="prettyprint"><code>import { isSame, fromISO } from '@alexstukovnikov/oz-time';const a = fromISO('2024-05-25T12:00:00.100Z');const b = fromISO('2024-05-25T12:00:00.900Z');console.log(isSame(a, b, 'second')); // ожидаемый результат: true</code></pre>
 
 
 

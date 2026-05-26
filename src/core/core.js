@@ -106,7 +106,7 @@ export class OzTime {
      *
      * @returns {number} Unix timestamp в миллисекундах.
      * @example
-     * import { fromISO } from 'oz-time';
+     * import { fromISO } from '@alexstukovnikov/oz-time';
      *
      * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
      * console.log(time.getTimestamp()); // ожидаемый результат: 1716638400000
@@ -120,7 +120,7 @@ export class OzTime {
      *
      * @returns {TimezoneString} Идентификатор часового пояса.
      * @example
-     * import { fromISO } from 'oz-time';
+     * import { fromISO } from '@alexstukovnikov/oz-time';
      *
      * const time = fromISO('2024-05-25T12:00:00Z', 'Europe/Moscow', 'ru-RU');
      * console.log(time.getTimezone()); // ожидаемый результат: Europe/Moscow
@@ -134,7 +134,7 @@ export class OzTime {
      *
      * @returns {LocaleString} Строка локали.
      * @example
-     * import { fromISO } from 'oz-time';
+     * import { fromISO } from '@alexstukovnikov/oz-time';
      *
      * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
      * console.log(time.getLocale()); // ожидаемый результат: ru-RU
@@ -160,7 +160,7 @@ console.log(time.toTimestamp()); // ожидаемый результат: 17166
      *
      * @returns {string} Строковое представление даты и времени в формате ISO 8601.
      * @example
-     * import { fromComponents } from 'oz-time';
+     * import { fromComponents } from '@alexstukovnikov/oz-time';
      *
      * const time = fromComponents(2024, 5, 25, 12, 0, 0, 0, 'UTC', 'ru-RU');
      * console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z
@@ -179,7 +179,7 @@ console.log(time.toTimestamp()); // ожидаемый результат: 17166
      * @param {TimeUnit|string} unit - Единица времени.
      * @returns {OzTime} Новый экземпляр OzTime с timestamp, сдвинутым вперёд.
      * @example
-     * import { fromISO } from 'oz-time';
+     * import { fromISO } from '@alexstukovnikov/oz-time';
      *
      * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
      * const nextDay = time.add(1, 'day');
@@ -199,7 +199,7 @@ console.log(time.toTimestamp()); // ожидаемый результат: 17166
      * @param {TimeUnit|string} unit - Единица времени.
      * @returns {OzTime} Новый экземпляр OzTime с timestamp, сдвинутым назад.
      * @example
-     * import { fromISO } from 'oz-time';
+     * import { fromISO } from '@alexstukovnikov/oz-time';
      *
      * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
      * const prevHour = time.subtract(1, 'hour');
@@ -216,7 +216,7 @@ console.log(time.toTimestamp()); // ожидаемый результат: 17166
      * @param {LocaleString} [locale] - Локаль, которая переопределяет локаль экземпляра.
      * @returns {string} Отформатированная строка.
      * @example
-     * import { fromISO } from 'oz-time';
+     * import { fromISO } from '@alexstukovnikov/oz-time';
      *
      * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
      * console.log(time.format('DD.MM.YYYY HH:mm')); // ожидаемый результат: 25.05.2024 12:00
@@ -233,7 +233,7 @@ console.log(time.toTimestamp()); // ожидаемый результат: 17166
      * @param {TimeUnit|string} [unit='millisecond'] - Точность сравнения.
      * @returns {boolean} `true`, если значения совпадают на указанной точности.
      * @example
-     * import { fromISO } from 'oz-time';
+     * import { fromISO } from '@alexstukovnikov/oz-time';
      *
      * const a = fromISO('2024-05-25T12:00:00.100Z');
      * const b = fromISO('2024-05-25T12:00:00.900Z');
@@ -251,7 +251,7 @@ console.log(time.toTimestamp()); // ожидаемый результат: 17166
      * @param {TimeUnit|string} [unit='millisecond'] - Точность сравнения.
      * @returns {boolean} `true`, если текущее значение раньше.
      * @example
-     * import { fromISO } from 'oz-time';
+     * import { fromISO } from '@alexstukovnikov/oz-time';
      *
      * const a = fromISO('2024-05-25T12:00:00Z');
      * const b = fromISO('2024-05-26T12:00:00Z');
@@ -269,7 +269,7 @@ console.log(time.toTimestamp()); // ожидаемый результат: 17166
      * @param {TimeUnit|string} [unit='millisecond'] - Точность сравнения.
      * @returns {boolean} `true`, если текущее значение позже.
      * @example
-     * import { fromISO } from 'oz-time';
+     * import { fromISO } from '@alexstukovnikov/oz-time';
      *
      * const a = fromISO('2024-05-26T12:00:00Z');
      * const b = fromISO('2024-05-25T12:00:00Z');
@@ -289,7 +289,7 @@ console.log(time.toTimestamp()); // ожидаемый результат: 17166
      * @param {Inclusivity} [inclusivity='[]'] - Формат включённости границ.
      * @returns {boolean} `true`, если значение находится внутри диапазона.
      * @example
-     * import { fromISO } from 'oz-time';
+     * import { fromISO } from '@alexstukovnikov/oz-time';
      *
      * const current = fromISO('2024-05-25T12:00:00Z');
      * const start = fromISO('2024-05-25T10:00:00Z');
@@ -309,7 +309,7 @@ console.log(time.toTimestamp()); // ожидаемый результат: 17166
      * @param {TimezoneString} timezone - Новый часовой пояс.
      * @returns {OzTime} Новый экземпляр OzTime с обновлённым часовым поясом.
      * @example
-     * import { fromISO } from 'oz-time';
+     * import { fromISO } from '@alexstukovnikov/oz-time';
      *
      * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
      * const moscowTime = time.setTimezone('Europe/Moscow');
@@ -324,7 +324,7 @@ console.log(time.toTimestamp()); // ожидаемый результат: 17166
      *
      * @returns {number} Смещение в минутах относительно UTC.
      * @example
-     * import { fromISO } from 'oz-time';
+     * import { fromISO } from '@alexstukovnikov/oz-time';
      *
      * const time = fromISO('2024-05-25T12:00:00Z', 'Europe/Moscow', 'ru-RU');
      * console.log(time.getTimezoneOffset()); // ожидаемый результат: 180
@@ -341,7 +341,7 @@ console.log(time.toTimestamp()); // ожидаемый результат: 17166
      * @param {TimeUnit|string} [unit='millisecond'] - Единица измерения разницы.
      * @returns {number} Разница между двумя значениями времени.
      * @example
-     * import { fromISO } from 'oz-time';
+     * import { fromISO } from '@alexstukovnikov/oz-time';
      *
      * const start = fromISO('2024-05-25T12:00:00Z');
      * const end = fromISO('2024-05-25T14:00:00Z');

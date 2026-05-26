@@ -418,7 +418,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');const nextDay = time.add(1, 'day');console.log(nextDay.toISOString()); // ожидаемый результат: 2024-05-26T12:00:00.000Z</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');const nextDay = time.add(1, 'day');console.log(nextDay.toISOString()); // ожидаемый результат: 2024-05-26T12:00:00.000Z</code></pre>
 
 
 
@@ -609,7 +609,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const start = fromISO('2024-05-25T12:00:00Z');const end = fromISO('2024-05-25T14:00:00Z');console.log(end.diff(start, 'hour')); // ожидаемый результат: 2</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const start = fromISO('2024-05-25T12:00:00Z');const end = fromISO('2024-05-25T14:00:00Z');console.log(end.diff(start, 'hour')); // ожидаемый результат: 2</code></pre>
 
 
 
@@ -831,7 +831,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');console.log(time.format('DD.MM.YYYY HH:mm')); // ожидаемый результат: 25.05.2024 12:00</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');console.log(time.format('DD.MM.YYYY HH:mm')); // ожидаемый результат: 25.05.2024 12:00</code></pre>
 
 
 
@@ -1038,7 +1038,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');console.log(time.getLocale()); // ожидаемый результат: ru-RU</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');console.log(time.getLocale()); // ожидаемый результат: ru-RU</code></pre>
 
 
 
@@ -1151,7 +1151,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');console.log(time.getTimestamp()); // ожидаемый результат: 1716638400000</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');console.log(time.getTimestamp()); // ожидаемый результат: 1716638400000</code></pre>
 
 
 
@@ -1264,7 +1264,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'Europe/Moscow', 'ru-RU');console.log(time.getTimezone()); // ожидаемый результат: Europe/Moscow</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'Europe/Moscow', 'ru-RU');console.log(time.getTimezone()); // ожидаемый результат: Europe/Moscow</code></pre>
 
 
 
@@ -1377,7 +1377,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'Europe/Moscow', 'ru-RU');console.log(time.getTimezoneOffset()); // ожидаемый результат: 180</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'Europe/Moscow', 'ru-RU');console.log(time.getTimezoneOffset()); // ожидаемый результат: 180</code></pre>
 
 
 
@@ -1491,7 +1491,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const a = fromISO('2024-05-26T12:00:00Z');const b = fromISO('2024-05-25T12:00:00Z');console.log(a.isAfter(b)); // ожидаемый результат: true</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const a = fromISO('2024-05-26T12:00:00Z');const b = fromISO('2024-05-25T12:00:00Z');console.log(a.isAfter(b)); // ожидаемый результат: true</code></pre>
 
 
 
@@ -1714,7 +1714,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const a = fromISO('2024-05-25T12:00:00Z');const b = fromISO('2024-05-26T12:00:00Z');console.log(a.isBefore(b)); // ожидаемый результат: true</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const a = fromISO('2024-05-25T12:00:00Z');const b = fromISO('2024-05-26T12:00:00Z');console.log(a.isBefore(b)); // ожидаемый результат: true</code></pre>
 
 
 
@@ -1937,7 +1937,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const current = fromISO('2024-05-25T12:00:00Z');const start = fromISO('2024-05-25T10:00:00Z');const end = fromISO('2024-05-25T14:00:00Z');console.log(current.isBetween(start, end)); // ожидаемый результат: true</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const current = fromISO('2024-05-25T12:00:00Z');const start = fromISO('2024-05-25T10:00:00Z');const end = fromISO('2024-05-25T14:00:00Z');console.log(current.isBetween(start, end)); // ожидаемый результат: true</code></pre>
 
 
 
@@ -2236,7 +2236,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const a = fromISO('2024-05-25T12:00:00.100Z');const b = fromISO('2024-05-25T12:00:00.900Z');console.log(a.isSame(b, 'second')); // ожидаемый результат: true</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const a = fromISO('2024-05-25T12:00:00.100Z');const b = fromISO('2024-05-25T12:00:00.900Z');console.log(a.isSame(b, 'second')); // ожидаемый результат: true</code></pre>
 
 
 
@@ -2460,7 +2460,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');const moscowTime = time.setTimezone('Europe/Moscow');console.log(moscowTime.getTimezone()); // ожидаемый результат: Europe/Moscow</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');const moscowTime = time.setTimezone('Europe/Moscow');console.log(moscowTime.getTimezone()); // ожидаемый результат: Europe/Moscow</code></pre>
 
 
 
@@ -2625,7 +2625,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');const prevHour = time.subtract(1, 'hour');console.log(prevHour.toISOString()); // ожидаемый результат: 2024-05-25T11:00:00.000Z</code></pre>
+    <pre class="prettyprint"><code>import { fromISO } from '@alexstukovnikov/oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');const prevHour = time.subtract(1, 'hour');console.log(prevHour.toISOString()); // ожидаемый результат: 2024-05-25T11:00:00.000Z</code></pre>
 
 
 
@@ -2815,7 +2815,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { fromComponents } from 'oz-time';const time = fromComponents(2024, 5, 25, 12, 0, 0, 0, 'UTC', 'ru-RU');console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z</code></pre>
+    <pre class="prettyprint"><code>import { fromComponents } from '@alexstukovnikov/oz-time';const time = fromComponents(2024, 5, 25, 12, 0, 0, 0, 'UTC', 'ru-RU');console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z</code></pre>
 
 
 

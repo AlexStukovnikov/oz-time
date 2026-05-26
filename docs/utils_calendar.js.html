@@ -161,7 +161,7 @@ function diffInYears(leftTimestamp, rightTimestamp) {
  * @throws {TypeError} Выбрасывается, если year не является целым числом.
  * @returns {boolean} `true`, если год високосный.
  * @example
- * import { isLeapYear } from 'oz-time';
+ * import { isLeapYear } from '@alexstukovnikov/oz-time';
  *
  * console.log(isLeapYear(2024)); // ожидаемый результат: true
  */
@@ -182,7 +182,7 @@ export function isLeapYear(year) {
  * @throws {RangeError} Выбрасывается, если month вне диапазона от 1 до 12.
  * @returns {number} Количество дней в месяце.
  * @example
- * import { daysInMonth } from 'oz-time';
+ * import { daysInMonth } from '@alexstukovnikov/oz-time';
  *
  * console.log(daysInMonth(2024, 2)); // ожидаемый результат: 29
  */
@@ -294,7 +294,7 @@ export function addByCalendarUnit(timestamp, amount, unit) {
  * @returns {number} Разница между двумя значениями времени.
  * @example
  * import { diff } from './utils/calendar.js';
- * import { fromISO } from 'oz-time';
+ * import { fromISO } from '@alexstukovnikov/oz-time';
  *
  * const a = fromISO('2024-05-25T14:00:00Z');
  * const b = fromISO('2024-05-25T12:00:00Z');

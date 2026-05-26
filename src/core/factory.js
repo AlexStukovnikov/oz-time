@@ -57,7 +57,7 @@ function assertInteger(value, name) {
  * @param {string} [locale='en-US'] - Локаль форматирования.
  * @returns {OzTime} Экземпляр с текущим временем.
  * @example
- * import { now } from 'oz-time';
+ * import { now } from '@alexstukovnikov/oz-time';
  *
  * const current = now('Europe/Moscow', 'ru-RU');
  * console.log(current.getTimezone()); // ожидаемый результат: Europe/Moscow
@@ -75,7 +75,7 @@ export function now(timezone = 'UTC', locale = 'en-US') {
  * @throws {TypeError} Выбрасывается, если timestamp некорректен.
  * @returns {OzTime} Экземпляр времени.
  * @example
- * import { fromTimestamp } from 'oz-time';
+ * import { fromTimestamp } from '@alexstukovnikov/oz-time';
  *
  * const time = fromTimestamp(1716638400000, 'UTC', 'ru-RU');
  * console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z
@@ -94,7 +94,7 @@ export function fromTimestamp(timestamp, timezone = 'UTC', locale = 'en-US') {
  * @throws {TypeError} Выбрасывается, если date некорректен.
  * @returns {OzTime} Экземпляр времени.
  * @example
- * import { fromDate } from 'oz-time';
+ * import { fromDate } from '@alexstukovnikov/oz-time';
  *
  * const time = fromDate(new Date('2024-05-25T12:00:00Z'), 'UTC', 'ru-RU');
  * console.log(time.toTimestamp()); // ожидаемый результат: 1716638400000
@@ -114,7 +114,7 @@ export function fromDate(date, timezone = 'UTC', locale = 'en-US') {
  * @throws {Error} Выбрасывается, если строку не удалось распарсить.
  * @returns {OzTime} Экземпляр времени.
  * @example
- * import { fromISO } from 'oz-time';
+ * import { fromISO } from '@alexstukovnikov/oz-time';
  *
  * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
  * console.log(time.format('DD.MM.YYYY HH:mm')); // ожидаемый результат: 25.05.2024 12:00
@@ -149,7 +149,7 @@ export function fromISO(isoString, timezone = 'UTC', locale = 'en-US') {
  * @throws {RangeError} Выбрасывается, если любой компонент даты или времени вне допустимого диапазона.
  * @returns {OzTime} Экземпляр времени.
  * @example
- * import { fromComponents } from 'oz-time';
+ * import { fromComponents } from '@alexstukovnikov/oz-time';
  *
  * const time = fromComponents(2024, 5, 25, 12, 0, 0, 0, 'UTC', 'ru-RU');
  * console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z
