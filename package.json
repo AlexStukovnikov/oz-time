@@ -1,6 +1,6 @@
 {
     "name": "@alexstukovnikov/oz-time",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Lightweight JavaScript date-time library",
     "repository": {
         "type": "git",
