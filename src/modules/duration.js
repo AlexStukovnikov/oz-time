@@ -25,7 +25,7 @@ function assertAmount(amount) {
  *
  * @class
  * @example
- * import { Duration } from 'oz-time';
+ * import { Duration } from '@alexstukovnikov/oz-time';
  *
  * const duration = new Duration(3600000);
  * console.log(duration.asHours()); // ожидаемый результат: 1
@@ -50,7 +50,7 @@ export class Duration {
      *
      * @returns {number} Длительность в миллисекундах.
      * @example
-     * import { duration } from 'oz-time';
+     * import { duration } from '@alexstukovnikov/oz-time';
      *
      * const value = duration(3600000, 'millisecond');
      * console.log(value.asMilliseconds()); // ожидаемый результат: 3600000
@@ -64,7 +64,7 @@ export class Duration {
      *
      * @returns {number} Длительность в секундах.
      * @example
-     * import { duration } from 'oz-time';
+     * import { duration } from '@alexstukovnikov/oz-time';
      *
      * const value = duration(3600000, 'millisecond');
      * console.log(value.asSeconds()); // ожидаемый результат: 3600
@@ -78,7 +78,7 @@ export class Duration {
      *
      * @returns {number} Длительность в минутах.
      * @example
-     * import { duration } from 'oz-time';
+     * import { duration } from '@alexstukovnikov/oz-time';
      *
      * const value = duration(3600000, 'millisecond');
      * console.log(value.asMinutes()); // ожидаемый результат: 60
@@ -92,7 +92,7 @@ export class Duration {
      *
      * @returns {number} Длительность в часах.
      * @example
-     * import { duration } from 'oz-time';
+     * import { duration } from '@alexstukovnikov/oz-time';
      *
      * const value = duration(36000000, 'millisecond');
      * console.log(value.asHours()); // ожидаемый результат: 10
@@ -106,7 +106,7 @@ export class Duration {
      *
      * @returns {number} Длительность в днях.
      * @example
-     * import { duration } from 'oz-time';
+     * import { duration } from '@alexstukovnikov/oz-time';
      *
      * const value = duration(120, 'hour');
      * console.log(value.asDays()); // ожидаемый результат: 5
@@ -122,7 +122,7 @@ export class Duration {
      * @throws {TypeError} Выбрасывается, если other не является экземпляром Duration.
      * @returns {Duration} Новая длительность, равная сумме двух значений.
      * @example
-     * import { duration } from 'oz-time';
+     * import { duration } from '@alexstukovnikov/oz-time';
      *
      * const a = duration(1, 'second');
      * const b = duration(2, 'second');
@@ -147,7 +147,7 @@ export class Duration {
  * @throws {Error} Выбрасывается, если unit не является фиксированной единицей времени.
  * @returns {Duration} Экземпляр Duration.
  * @example
- * import { duration } from 'oz-time';
+ * import { duration } from '@alexstukovnikov/oz-time';
  *
  * const value = duration(2, 'hour');
  * console.log(value.asMinutes()); // ожидаемый результат: 120

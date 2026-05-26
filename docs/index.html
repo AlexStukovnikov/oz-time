@@ -63,6 +63,7 @@
         <article><h1 id="oztime">OzTime</h1>
 <p>JavaScript-библиотека для работы с датой и временем.</p>
 <p><code>OzTime</code> предоставляет неизменяемые объекты времени, фабричные функции создания экземпляров, арифметику по фиксированным и календарным единицам, сравнение, форматирование, работу с часовыми поясами, интервалы и длительности.</p>
+<p><a href="https://AlexStukovnikov.github.io/oz-time/">Полная документация API</a></p>
 <h2 id="%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B5">Содержание</h2>
 <ul>
 <li><a href="#%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83-oztime">Почему OzTime</a></li>
@@ -156,13 +157,13 @@
 </ul>
 <h2 id="%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0">Установка</h2>
 <h3 id="%D0%BA%D0%B0%D0%BA-%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0">Как зависимость проекта</h3>
-<pre class="prettyprint source lang-bash"><code>npm install oz-time
+<pre class="prettyprint source lang-bash"><code>npm install @alexstukovnikov/oz-time
 </code></pre>
 <h3 id="%D0%B4%D0%BB%D1%8F-%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8">Для локальной разработки</h3>
 <pre class="prettyprint source lang-bash"><code>npm install
 </code></pre>
 <h2 id="%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9-%D1%81%D1%82%D0%B0%D1%80%D1%82">Быстрый старт</h2>
-<pre class="prettyprint source lang-js"><code>import { now, fromISO, duration, interval } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { now, fromISO, duration, interval } from '@alexstukovnikov/oz-time';
 
 const current = now('Europe/Moscow', 'ru-RU');
 const release = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
@@ -270,35 +271,35 @@ console.log(oneHour.asMinutes()); // ожидаемый результат: 60
 <h2 id="%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%8D%D0%BA%D0%B7%D0%B5%D0%BC%D0%BF%D0%BB%D1%8F%D1%80%D0%BE%D0%B2">Создание экземпляров</h2>
 <h3 id="now(timezone%3F%2C-locale%3F)"><code>now(timezone?, locale?)</code></h3>
 <p>Создаёт экземпляр <code>OzTime</code> для текущего момента времени.</p>
-<pre class="prettyprint source lang-js"><code>import { now } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { now } from '@alexstukovnikov/oz-time';
 
 const current = now('Europe/Moscow', 'ru-RU');
 console.log(current.getTimezone()); // ожидаемый результат: Europe/Moscow
 </code></pre>
 <h3 id="fromtimestamp(timestamp%2C-timezone%3F%2C-locale%3F)"><code>fromTimestamp(timestamp, timezone?, locale?)</code></h3>
 <p>Создаёт экземпляр из Unix timestamp в миллисекундах.</p>
-<pre class="prettyprint source lang-js"><code>import { fromTimestamp } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromTimestamp } from '@alexstukovnikov/oz-time';
 
 const time = fromTimestamp(1716638400000, 'UTC', 'ru-RU');
 console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z
 </code></pre>
 <h3 id="fromdate(date%2C-timezone%3F%2C-locale%3F)"><code>fromDate(date, timezone?, locale?)</code></h3>
 <p>Создаёт экземпляр из объекта <code>Date</code>.</p>
-<pre class="prettyprint source lang-js"><code>import { fromDate } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromDate } from '@alexstukovnikov/oz-time';
 
 const time = fromDate(new Date('2024-05-25T12:00:00Z'), 'UTC', 'ru-RU');
 console.log(time.toTimestamp()); // ожидаемый результат: 1716638400000
 </code></pre>
 <h3 id="fromiso(isostring%2C-timezone%3F%2C-locale%3F)"><code>fromISO(isoString, timezone?, locale?)</code></h3>
 <p>Создаёт экземпляр из ISO-строки.</p>
-<pre class="prettyprint source lang-js"><code>import { fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromISO } from '@alexstukovnikov/oz-time';
 
 const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
 console.log(time.format('DD.MM.YYYY HH:mm')); // ожидаемый результат: 25.05.2024 12:00
 </code></pre>
 <h3 id="fromcomponents(year%2C-month%2C-day%2C-hour%3F%2C-minute%3F%2C-second%3F%2C-ms%3F%2C-timezone%3F%2C-locale%3F)"><code>fromComponents(year, month, day, hour?, minute?, second?, ms?, timezone?, locale?)</code></h3>
 <p>Создаёт экземпляр из отдельных компонентов даты и времени.</p>
-<pre class="prettyprint source lang-js"><code>import { fromComponents } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromComponents } from '@alexstukovnikov/oz-time';
 
 const time = fromComponents(2024, 5, 25, 12, 0, 0, 0, 'UTC', 'ru-RU');
 console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z
@@ -306,7 +307,7 @@ console.log(time.toISOString()); // ожидаемый результат: 2024-
 <h2 id="%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B0">Арифметика</h2>
 <p>Все арифметические операции возвращают новый экземпляр <code>OzTime</code> и не изменяют исходный объект.</p>
 <h3 id="%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8">Добавление времени</h3>
-<pre class="prettyprint source lang-js"><code>import { fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromISO } from '@alexstukovnikov/oz-time';
 
 const time = fromISO('2024-05-25T12:00:00Z');
 const result = time.add(1, 'day');
@@ -314,7 +315,7 @@ const result = time.add(1, 'day');
 console.log(result.toISOString()); // ожидаемый результат: 2024-05-26T12:00:00.000Z
 </code></pre>
 <h3 id="%D0%B2%D1%8B%D1%87%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8">Вычитание времени</h3>
-<pre class="prettyprint source lang-js"><code>import { fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromISO } from '@alexstukovnikov/oz-time';
 
 const time = fromISO('2024-05-25T12:00:00Z');
 const result = time.subtract(2, 'hour');
@@ -322,7 +323,7 @@ const result = time.subtract(2, 'hour');
 console.log(result.toISOString()); // ожидаемый результат: 2024-05-25T10:00:00.000Z
 </code></pre>
 <h3 id="%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-%D0%B4%D0%B0%D1%82%D0%B0%D0%BC%D0%B8">Разница между датами</h3>
-<pre class="prettyprint source lang-js"><code>import { fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromISO } from '@alexstukovnikov/oz-time';
 
 const start = fromISO('2024-05-25T12:00:00Z');
 const end = fromISO('2024-05-25T15:00:00Z');
@@ -330,7 +331,7 @@ const end = fromISO('2024-05-25T15:00:00Z');
 console.log(end.diff(start, 'hour')); // ожидаемый результат: 3
 </code></pre>
 <h3 id="%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D0%B0%D1%8F-%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B0">Календарная арифметика</h3>
-<pre class="prettyprint source lang-js"><code>import { fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromISO } from '@alexstukovnikov/oz-time';
 
 const date = fromISO('2024-01-31T00:00:00Z');
 const result = date.add(1, 'month');
@@ -339,7 +340,7 @@ console.log(result.toISOString()); // ожидаемый результат: 202
 </code></pre>
 <h2 id="%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5">Сравнение</h2>
 <h3 id="issame"><code>isSame</code></h3>
-<pre class="prettyprint source lang-js"><code>import { fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromISO } from '@alexstukovnikov/oz-time';
 
 const a = fromISO('2024-05-25T12:00:00.100Z');
 const b = fromISO('2024-05-25T12:00:00.900Z');
@@ -347,7 +348,7 @@ const b = fromISO('2024-05-25T12:00:00.900Z');
 console.log(a.isSame(b, 'second')); // ожидаемый результат: true
 </code></pre>
 <h3 id="isbefore"><code>isBefore</code></h3>
-<pre class="prettyprint source lang-js"><code>import { fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromISO } from '@alexstukovnikov/oz-time';
 
 const a = fromISO('2024-05-25T12:00:00Z');
 const b = fromISO('2024-05-26T12:00:00Z');
@@ -355,7 +356,7 @@ const b = fromISO('2024-05-26T12:00:00Z');
 console.log(a.isBefore(b)); // ожидаемый результат: true
 </code></pre>
 <h3 id="isafter"><code>isAfter</code></h3>
-<pre class="prettyprint source lang-js"><code>import { fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromISO } from '@alexstukovnikov/oz-time';
 
 const a = fromISO('2024-05-26T12:00:00Z');
 const b = fromISO('2024-05-25T12:00:00Z');
@@ -363,7 +364,7 @@ const b = fromISO('2024-05-25T12:00:00Z');
 console.log(a.isAfter(b)); // ожидаемый результат: true
 </code></pre>
 <h3 id="isbetween"><code>isBetween</code></h3>
-<pre class="prettyprint source lang-js"><code>import { fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromISO } from '@alexstukovnikov/oz-time';
 
 const target = fromISO('2024-05-25T12:00:00Z');
 const start = fromISO('2024-05-25T10:00:00Z');
@@ -373,7 +374,7 @@ console.log(target.isBetween(start, end)); // ожидаемый результ�
 </code></pre>
 <h2 id="%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Форматирование</h2>
 <p>Функция <code>format()</code> и метод <code>OzTime#format()</code> поддерживают шаблоны.</p>
-<pre class="prettyprint source lang-js"><code>import { fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromISO } from '@alexstukovnikov/oz-time';
 
 const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
 
@@ -383,7 +384,7 @@ console.log(time.format('dddd, D MMMM YYYY', 'ru-RU')); // пример: суб�
 <h2 id="%D1%87%D0%B0%D1%81%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BF%D0%BE%D1%8F%D1%81%D0%B0">Часовые пояса</h2>
 <p><code>OzTime</code> хранит абсолютное время как timestamp, а часовой пояс используется как метаданные для отображения и форматирования.</p>
 <h3 id="%D1%81%D0%BC%D0%B5%D0%BD%D0%B0-%D1%87%D0%B0%D1%81%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%BF%D0%BE%D1%8F%D1%81%D0%B0">Смена часового пояса</h3>
-<pre class="prettyprint source lang-js"><code>import { fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromISO } from '@alexstukovnikov/oz-time';
 
 const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
 const moscow = time.setTimezone('Europe/Moscow');
@@ -391,14 +392,14 @@ const moscow = time.setTimezone('Europe/Moscow');
 console.log(moscow.getTimezone()); // ожидаемый результат: Europe/Moscow
 </code></pre>
 <h3 id="%D1%81%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE-utc">Смещение относительно UTC</h3>
-<pre class="prettyprint source lang-js"><code>import { fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { fromISO } from '@alexstukovnikov/oz-time';
 
 const time = fromISO('2024-05-25T12:00:00Z', 'Europe/Moscow', 'ru-RU');
 console.log(time.getTimezoneOffset()); // ожидаемый результат: 180
 </code></pre>
 <h2 id="%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D0%B0%D0%BB%D1%8B">Интервалы</h2>
 <p>Интервал представляет диапазон между двумя экземплярами <code>OzTime</code>, включая границы.</p>
-<pre class="prettyprint source lang-js"><code>import { interval, fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { interval, fromISO } from '@alexstukovnikov/oz-time';
 
 const start = fromISO('2024-05-25T10:00:00Z');
 const end = fromISO('2024-05-25T12:00:00Z');
@@ -408,7 +409,7 @@ console.log(range.contains(fromISO('2024-05-25T11:00:00Z'))); // ожидаем�
 console.log(range.duration('hour')); // ожидаемый результат: 2
 </code></pre>
 <h3 id="%D0%BF%D0%B5%D1%80%D0%B5%D1%81%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D0%B0%D0%BB%D0%BE%D0%B2">Пересечение интервалов</h3>
-<pre class="prettyprint source lang-js"><code>import { Interval, fromISO } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { Interval, fromISO } from '@alexstukovnikov/oz-time';
 
 const a = new Interval(fromISO('2024-05-25T10:00:00Z'), fromISO('2024-05-25T12:00:00Z'));
 
@@ -418,7 +419,7 @@ console.log(a.overlaps(b)); // ожидаемый результат: true
 </code></pre>
 <h2 id="%D0%B4%D0%BB%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Длительности</h2>
 <p><code>Duration</code> используется для работы с фиксированными единицами времени.</p>
-<pre class="prettyprint source lang-js"><code>import { duration } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { duration } from '@alexstukovnikov/oz-time';
 
 const twoHours = duration(2, 'hour');
 
@@ -427,7 +428,7 @@ console.log(twoHours.asMinutes()); // ожидаемый результат: 120
 console.log(twoHours.asHours()); // ожидаемый результат: 2
 </code></pre>
 <h3 id="%D1%81%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BB%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9">Сложение длительностей</h3>
-<pre class="prettyprint source lang-js"><code>import { duration } from 'oz-time';
+<pre class="prettyprint source lang-js"><code>import { duration } from '@alexstukovnikov/oz-time';
 
 const a = duration(30, 'minute');
 const b = duration(45, 'minute');

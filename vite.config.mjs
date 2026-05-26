@@ -13,7 +13,7 @@ export default defineConfig({
             },
         },
         target: 'es2021',
-        sourcemap: true,
+        sourcemap: false,
         rollupOptions: {
             external: [],
         },

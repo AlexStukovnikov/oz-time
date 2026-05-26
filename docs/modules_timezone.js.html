@@ -121,7 +121,7 @@ function getOffsetMinutesFor(timestamp, timeZone) {
  * @throws {Error} Выбрасывается, если timezone не поддерживается.
  * @returns {OzTime} Новый экземпляр OzTime с другим часовым поясом.
  * @example
- * import { setTimezone, fromISO } from 'oz-time';
+ * import { setTimezone, fromISO } from '@alexstukovnikov/oz-time';
  *
  * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
  * const moscow = setTimezone(time, 'Europe/Moscow');
@@ -144,7 +144,7 @@ export function setTimezone(time, timezone) {
  * @throws {TypeError} Выбрасывается, если аргумент не является экземпляром OzTime.
  * @returns {number} Смещение в минутах относительно UTC.
  * @example
- * import { getTimezoneOffset, fromISO } from 'oz-time';
+ * import { getTimezoneOffset, fromISO } from '@alexstukovnikov/oz-time';
  *
  * const time = fromISO('2024-05-25T12:00:00Z', 'Europe/Moscow', 'ru-RU');
  * console.log(getTimezoneOffset(time)); // ожидаемый результат: 180

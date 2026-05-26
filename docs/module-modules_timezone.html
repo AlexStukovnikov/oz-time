@@ -230,7 +230,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { getTimezoneOffset, fromISO } from 'oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'Europe/Moscow', 'ru-RU');console.log(getTimezoneOffset(time)); // ожидаемый результат: 180</code></pre>
+    <pre class="prettyprint"><code>import { getTimezoneOffset, fromISO } from '@alexstukovnikov/oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'Europe/Moscow', 'ru-RU');console.log(getTimezoneOffset(time)); // ожидаемый результат: 180</code></pre>
 
 
 
@@ -425,7 +425,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { setTimezone, fromISO } from 'oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');const moscow = setTimezone(time, 'Europe/Moscow');console.log(moscow.getTimezone()); // ожидаемый результат: Europe/Moscow</code></pre>
+    <pre class="prettyprint"><code>import { setTimezone, fromISO } from '@alexstukovnikov/oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');const moscow = setTimezone(time, 'Europe/Moscow');console.log(moscow.getTimezone()); // ожидаемый результат: Europe/Moscow</code></pre>
 
 
 

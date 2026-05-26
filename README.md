@@ -83,7 +83,7 @@ JavaScript-библиотека для работы с датой и време�
 ### Как зависимость проекта
 
 ```bash
-npm install oz-time
+npm install @alexstukovnikov/oz-time
 ```
 
 ### Для локальной разработки
@@ -95,7 +95,7 @@ npm install
 ## Быстрый старт
 
 ```js
-import { now, fromISO, duration, interval } from 'oz-time';
+import { now, fromISO, duration, interval } from '@alexstukovnikov/oz-time';
 
 const current = now('Europe/Moscow', 'ru-RU');
 const release = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
@@ -141,7 +141,7 @@ console.log(oneHour.asMinutes()); // ожидаемый результат: 60
 Создаёт экземпляр `OzTime` для текущего момента времени.
 
 ```js
-import { now } from 'oz-time';
+import { now } from '@alexstukovnikov/oz-time';
 
 const current = now('Europe/Moscow', 'ru-RU');
 console.log(current.getTimezone()); // ожидаемый результат: Europe/Moscow
@@ -152,7 +152,7 @@ console.log(current.getTimezone()); // ожидаемый результат: Eu
 Создаёт экземпляр из Unix timestamp в миллисекундах.
 
 ```js
-import { fromTimestamp } from 'oz-time';
+import { fromTimestamp } from '@alexstukovnikov/oz-time';
 
 const time = fromTimestamp(1716638400000, 'UTC', 'ru-RU');
 console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z
@@ -163,7 +163,7 @@ console.log(time.toISOString()); // ожидаемый результат: 2024-
 Создаёт экземпляр из объекта `Date`.
 
 ```js
-import { fromDate } from 'oz-time';
+import { fromDate } from '@alexstukovnikov/oz-time';
 
 const time = fromDate(new Date('2024-05-25T12:00:00Z'), 'UTC', 'ru-RU');
 console.log(time.toTimestamp()); // ожидаемый результат: 1716638400000
@@ -174,7 +174,7 @@ console.log(time.toTimestamp()); // ожидаемый результат: 17166
 Создаёт экземпляр из ISO-строки.
 
 ```js
-import { fromISO } from 'oz-time';
+import { fromISO } from '@alexstukovnikov/oz-time';
 
 const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
 console.log(time.format('DD.MM.YYYY HH:mm')); // ожидаемый результат: 25.05.2024 12:00
@@ -185,7 +185,7 @@ console.log(time.format('DD.MM.YYYY HH:mm')); // ожидаемый резуль
 Создаёт экземпляр из отдельных компонентов даты и времени.
 
 ```js
-import { fromComponents } from 'oz-time';
+import { fromComponents } from '@alexstukovnikov/oz-time';
 
 const time = fromComponents(2024, 5, 25, 12, 0, 0, 0, 'UTC', 'ru-RU');
 console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z
@@ -198,7 +198,7 @@ console.log(time.toISOString()); // ожидаемый результат: 2024-
 ### Добавление времени
 
 ```js
-import { fromISO } from 'oz-time';
+import { fromISO } from '@alexstukovnikov/oz-time';
 
 const time = fromISO('2024-05-25T12:00:00Z');
 const result = time.add(1, 'day');
@@ -209,7 +209,7 @@ console.log(result.toISOString()); // ожидаемый результат: 202
 ### Вычитание времени
 
 ```js
-import { fromISO } from 'oz-time';
+import { fromISO } from '@alexstukovnikov/oz-time';
 
 const time = fromISO('2024-05-25T12:00:00Z');
 const result = time.subtract(2, 'hour');
@@ -220,7 +220,7 @@ console.log(result.toISOString()); // ожидаемый результат: 202
 ### Разница между датами
 
 ```js
-import { fromISO } from 'oz-time';
+import { fromISO } from '@alexstukovnikov/oz-time';
 
 const start = fromISO('2024-05-25T12:00:00Z');
 const end = fromISO('2024-05-25T15:00:00Z');
@@ -231,7 +231,7 @@ console.log(end.diff(start, 'hour')); // ожидаемый результат: 
 ### Календарная арифметика
 
 ```js
-import { fromISO } from 'oz-time';
+import { fromISO } from '@alexstukovnikov/oz-time';
 
 const date = fromISO('2024-01-31T00:00:00Z');
 const result = date.add(1, 'month');
@@ -244,7 +244,7 @@ console.log(result.toISOString()); // ожидаемый результат: 202
 ### `isSame`
 
 ```js
-import { fromISO } from 'oz-time';
+import { fromISO } from '@alexstukovnikov/oz-time';
 
 const a = fromISO('2024-05-25T12:00:00.100Z');
 const b = fromISO('2024-05-25T12:00:00.900Z');
@@ -255,7 +255,7 @@ console.log(a.isSame(b, 'second')); // ожидаемый результат: tr
 ### `isBefore`
 
 ```js
-import { fromISO } from 'oz-time';
+import { fromISO } from '@alexstukovnikov/oz-time';
 
 const a = fromISO('2024-05-25T12:00:00Z');
 const b = fromISO('2024-05-26T12:00:00Z');
@@ -266,7 +266,7 @@ console.log(a.isBefore(b)); // ожидаемый результат: true
 ### `isAfter`
 
 ```js
-import { fromISO } from 'oz-time';
+import { fromISO } from '@alexstukovnikov/oz-time';
 
 const a = fromISO('2024-05-26T12:00:00Z');
 const b = fromISO('2024-05-25T12:00:00Z');
@@ -277,7 +277,7 @@ console.log(a.isAfter(b)); // ожидаемый результат: true
 ### `isBetween`
 
 ```js
-import { fromISO } from 'oz-time';
+import { fromISO } from '@alexstukovnikov/oz-time';
 
 const target = fromISO('2024-05-25T12:00:00Z');
 const start = fromISO('2024-05-25T10:00:00Z');
@@ -291,7 +291,7 @@ console.log(target.isBetween(start, end)); // ожидаемый результ�
 Функция `format()` и метод `OzTime#format()` поддерживают шаблоны.
 
 ```js
-import { fromISO } from 'oz-time';
+import { fromISO } from '@alexstukovnikov/oz-time';
 
 const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
 
@@ -306,7 +306,7 @@ console.log(time.format('dddd, D MMMM YYYY', 'ru-RU')); // пример: суб�
 ### Смена часового пояса
 
 ```js
-import { fromISO } from 'oz-time';
+import { fromISO } from '@alexstukovnikov/oz-time';
 
 const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
 const moscow = time.setTimezone('Europe/Moscow');
@@ -317,7 +317,7 @@ console.log(moscow.getTimezone()); // ожидаемый результат: Eur
 ### Смещение относительно UTC
 
 ```js
-import { fromISO } from 'oz-time';
+import { fromISO } from '@alexstukovnikov/oz-time';
 
 const time = fromISO('2024-05-25T12:00:00Z', 'Europe/Moscow', 'ru-RU');
 console.log(time.getTimezoneOffset()); // ожидаемый результат: 180
@@ -328,7 +328,7 @@ console.log(time.getTimezoneOffset()); // ожидаемый результат:
 Интервал представляет диапазон между двумя экземплярами `OzTime`, включая границы.
 
 ```js
-import { interval, fromISO } from 'oz-time';
+import { interval, fromISO } from '@alexstukovnikov/oz-time';
 
 const start = fromISO('2024-05-25T10:00:00Z');
 const end = fromISO('2024-05-25T12:00:00Z');
@@ -341,7 +341,7 @@ console.log(range.duration('hour')); // ожидаемый результат: 2
 ### Пересечение интервалов
 
 ```js
-import { Interval, fromISO } from 'oz-time';
+import { Interval, fromISO } from '@alexstukovnikov/oz-time';
 
 const a = new Interval(fromISO('2024-05-25T10:00:00Z'), fromISO('2024-05-25T12:00:00Z'));
 
@@ -355,7 +355,7 @@ console.log(a.overlaps(b)); // ожидаемый результат: true
 `Duration` используется для работы с фиксированными единицами времени.
 
 ```js
-import { duration } from 'oz-time';
+import { duration } from '@alexstukovnikov/oz-time';
 
 const twoHours = duration(2, 'hour');
 
@@ -367,7 +367,7 @@ console.log(twoHours.asHours()); // ожидаемый результат: 2
 ### Сложение длительностей
 
 ```js
-import { duration } from 'oz-time';
+import { duration } from '@alexstukovnikov/oz-time';
 
 const a = duration(30, 'minute');
 const b = duration(45, 'minute');

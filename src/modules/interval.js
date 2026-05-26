@@ -27,7 +27,7 @@ function assertOzTime(value, name) {
  *
  * @class
  * @example
- * import { Interval, fromISO } from 'oz-time';
+ * import { Interval, fromISO } from '@alexstukovnikov/oz-time';
  *
  * const start = fromISO('2024-05-25T10:00:00Z');
  * const end = fromISO('2024-05-25T12:00:00Z');
@@ -60,7 +60,7 @@ export class Interval {
      *
      * @returns {OzTime} Начальная граница интервала.
      * @example
-     * import { Interval, fromISO } from 'oz-time';
+     * import { Interval, fromISO } from '@alexstukovnikov/oz-time';
      *
      * const range = new Interval(
      *   fromISO('2024-05-25T10:00:00Z'),
@@ -77,7 +77,7 @@ export class Interval {
      *
      * @returns {OzTime} Конечная граница интервала.
      * @example
-     * import { Interval, fromISO } from 'oz-time';
+     * import { Interval, fromISO } from '@alexstukovnikov/oz-time';
      *
      * const range = new Interval(
      *   fromISO('2024-05-25T10:00:00Z'),
@@ -96,7 +96,7 @@ export class Interval {
      * @throws {TypeError} Выбрасывается, если moment не является экземпляром OzTime.
      * @returns {boolean} `true`, если значение входит в интервал.
      * @example
-     * import { Interval, fromISO } from 'oz-time';
+     * import { Interval, fromISO } from '@alexstukovnikov/oz-time';
      *
      * const range = new Interval(
      *   fromISO('2024-05-25T10:00:00Z'),
@@ -118,7 +118,7 @@ export class Interval {
      * @throws {TypeError} Выбрасывается, если other не является экземпляром Interval.
      * @returns {boolean} `true`, если интервалы пересекаются.
      * @example
-     * import { Interval, fromISO } from 'oz-time';
+     * import { Interval, fromISO } from '@alexstukovnikov/oz-time';
      *
      * const a = new Interval(
      *   fromISO('2024-05-25T10:00:00Z'),
@@ -150,7 +150,7 @@ export class Interval {
      * @throws {Error} Выбрасывается, если unit не является фиксированной единицей времени.
      * @returns {number} Длительность интервала в указанной единице.
      * @example
-     * import { Interval, fromISO } from 'oz-time';
+     * import { Interval, fromISO } from '@alexstukovnikov/oz-time';
      *
      * const range = new Interval(
      *   fromISO('2024-05-25T10:00:00Z'),
@@ -177,7 +177,7 @@ export class Interval {
  * @param {OzTime} end - Конец интервала.
  * @returns {Interval} Новый экземпляр Interval.
  * @example
- * import { interval, fromISO } from 'oz-time';
+ * import { interval, fromISO } from '@alexstukovnikov/oz-time';
  *
  * const range = interval(
  *   fromISO('2024-05-25T10:00:00Z'),

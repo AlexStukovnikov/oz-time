@@ -133,7 +133,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { Interval, fromISO } from 'oz-time';const start = fromISO('2024-05-25T10:00:00Z');const end = fromISO('2024-05-25T12:00:00Z');const range = new Interval(start, end);console.log(range.contains(fromISO('2024-05-25T11:00:00Z'))); // ожидаемый результат: true</code></pre>
+    <pre class="prettyprint"><code>import { Interval, fromISO } from '@alexstukovnikov/oz-time';const start = fromISO('2024-05-25T10:00:00Z');const end = fromISO('2024-05-25T12:00:00Z');const range = new Interval(start, end);console.log(range.contains(fromISO('2024-05-25T11:00:00Z'))); // ожидаемый результат: true</code></pre>
 
 
 
@@ -376,7 +376,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { Interval, fromISO } from 'oz-time';const range = new Interval(  fromISO('2024-05-25T10:00:00Z'),  fromISO('2024-05-25T12:00:00Z'));console.log(range.contains(fromISO('2024-05-25T11:00:00Z'))); // ожидаемый результат: true</code></pre>
+    <pre class="prettyprint"><code>import { Interval, fromISO } from '@alexstukovnikov/oz-time';const range = new Interval(  fromISO('2024-05-25T10:00:00Z'),  fromISO('2024-05-25T12:00:00Z'));console.log(range.contains(fromISO('2024-05-25T11:00:00Z'))); // ожидаемый результат: true</code></pre>
 
 
 
@@ -569,7 +569,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { Interval, fromISO } from 'oz-time';const range = new Interval(  fromISO('2024-05-25T10:00:00Z'),  fromISO('2024-05-25T12:00:00Z'));console.log(range.duration('hour')); // ожидаемый результат: 2</code></pre>
+    <pre class="prettyprint"><code>import { Interval, fromISO } from '@alexstukovnikov/oz-time';const range = new Interval(  fromISO('2024-05-25T10:00:00Z'),  fromISO('2024-05-25T12:00:00Z'));console.log(range.duration('hour')); // ожидаемый результат: 2</code></pre>
 
 
 
@@ -782,7 +782,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { Interval, fromISO } from 'oz-time';const range = new Interval(  fromISO('2024-05-25T10:00:00Z'),  fromISO('2024-05-25T12:00:00Z'));console.log(range.getEnd().toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z</code></pre>
+    <pre class="prettyprint"><code>import { Interval, fromISO } from '@alexstukovnikov/oz-time';const range = new Interval(  fromISO('2024-05-25T10:00:00Z'),  fromISO('2024-05-25T12:00:00Z'));console.log(range.getEnd().toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z</code></pre>
 
 
 
@@ -895,7 +895,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { Interval, fromISO } from 'oz-time';const range = new Interval(  fromISO('2024-05-25T10:00:00Z'),  fromISO('2024-05-25T12:00:00Z'));console.log(range.getStart().toISOString()); // ожидаемый результат: 2024-05-25T10:00:00.000Z</code></pre>
+    <pre class="prettyprint"><code>import { Interval, fromISO } from '@alexstukovnikov/oz-time';const range = new Interval(  fromISO('2024-05-25T10:00:00Z'),  fromISO('2024-05-25T12:00:00Z'));console.log(range.getStart().toISOString()); // ожидаемый результат: 2024-05-25T10:00:00.000Z</code></pre>
 
 
 
@@ -1008,7 +1008,7 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>import { Interval, fromISO } from 'oz-time';const a = new Interval(  fromISO('2024-05-25T10:00:00Z'),  fromISO('2024-05-25T12:00:00Z'));const b = new Interval(  fromISO('2024-05-25T11:00:00Z'),  fromISO('2024-05-25T13:00:00Z'));console.log(a.overlaps(b)); // ожидаемый результат: true</code></pre>
+    <pre class="prettyprint"><code>import { Interval, fromISO } from '@alexstukovnikov/oz-time';const a = new Interval(  fromISO('2024-05-25T10:00:00Z'),  fromISO('2024-05-25T12:00:00Z'));const b = new Interval(  fromISO('2024-05-25T11:00:00Z'),  fromISO('2024-05-25T13:00:00Z'));console.log(a.overlaps(b)); // ожидаемый результат: true</code></pre>
 
 
 

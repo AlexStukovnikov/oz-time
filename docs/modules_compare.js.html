@@ -129,7 +129,7 @@ function truncateToUnit(timestamp, unit) {
  * @throws {TypeError} Выбрасывается, если хотя бы один аргумент не является экземпляром OzTime.
  * @returns {boolean} `true`, если значения равны на заданной точности.
  * @example
- * import { isSame, fromISO } from 'oz-time';
+ * import { isSame, fromISO } from '@alexstukovnikov/oz-time';
  *
  * const a = fromISO('2024-05-25T12:00:00.100Z');
  * const b = fromISO('2024-05-25T12:00:00.900Z');
@@ -155,7 +155,7 @@ export function isSame(a, b, unit = 'millisecond') {
  * @throws {TypeError} Выбрасывается, если хотя бы один аргумент не является экземпляром OzTime.
  * @returns {boolean} `true`, если первое значение раньше второго.
  * @example
- * import { isBefore, fromISO } from 'oz-time';
+ * import { isBefore, fromISO } from '@alexstukovnikov/oz-time';
  *
  * const a = fromISO('2024-05-25T12:00:00Z');
  * const b = fromISO('2024-05-26T12:00:00Z');
@@ -181,7 +181,7 @@ export function isBefore(a, b, unit = 'millisecond') {
  * @throws {TypeError} Выбрасывается, если хотя бы один аргумент не является экземпляром OzTime.
  * @returns {boolean} `true`, если первое значение позже второго.
  * @example
- * import { isAfter, fromISO } from 'oz-time';
+ * import { isAfter, fromISO } from '@alexstukovnikov/oz-time';
  *
  * const a = fromISO('2024-05-26T12:00:00Z');
  * const b = fromISO('2024-05-25T12:00:00Z');
@@ -210,7 +210,7 @@ export function isAfter(a, b, unit = 'millisecond') {
  * @throws {Error} Выбрасывается, если inclusivity задан некорректно.
  * @returns {boolean} `true`, если значение находится внутри диапазона.
  * @example
- * import { isBetween, fromISO } from 'oz-time';
+ * import { isBetween, fromISO } from '@alexstukovnikov/oz-time';
  *
  * const target = fromISO('2024-05-25T12:00:00Z');
  * const start = fromISO('2024-05-25T10:00:00Z');

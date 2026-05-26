@@ -1,5 +1,5 @@
 {
-    "name": "oz-time",
+    "name": "@alexstukovnikov/oz-time",
     "version": "1.0.0",
     "description": "Lightweight JavaScript date-time library",
     "repository": {
@@ -7,16 +7,13 @@
         "url": "https://github.com/AlexStukovnikov/oz-time.git"
     },
     "type": "module",
-    "main": "./dist/oz-time.cjs",
-    "module": "./dist/oz-time.esm.js",
+    "main": "./src/index.js",
     "exports": {
-        ".": {
-            "import": "./dist/oz-time.esm.js",
-            "require": "./dist/oz-time.cjs"
-        }
+        ".": "./src/index.js"
     },
     "files": [
-        "dist"
+        "src",
+        "README.md"
     ],
     "sideEffects": false,
     "scripts": {

@@ -101,7 +101,7 @@ function getWeekdayName(time, locale, length) {
  * @throws {TypeError} Выбрасывается, если первый аргумент не является экземпляром OzTime или template некорректен.
  * @returns {string} Отформатированная строка.
  * @example
- * import { format, fromISO } from 'oz-time';
+ * import { format, fromISO } from '@alexstukovnikov/oz-time';
  *
  * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
  * console.log(format(time, 'DD.MM.YYYY HH:mm')); // ожидаемый результат: 25.05.2024 12:00
