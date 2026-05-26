@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>utils/calendar - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-core_core.OzTime.html">core/core.OzTime</a><ul class='methods'><li data-type='method'><a href="module-core_core.OzTime.html#add">add</a></li><li data-type='method'><a href="module-core_core.OzTime.html#diff">diff</a></li><li data-type='method'><a href="module-core_core.OzTime.html#format">format</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getLocale">getLocale</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimestamp">getTimestamp</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezone">getTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isAfter">isAfter</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBefore">isBefore</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBetween">isBetween</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isSame">isSame</a></li><li data-type='method'><a href="module-core_core.OzTime.html#setTimezone">setTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#subtract">subtract</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toISOString">toISOString</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toTimestamp">toTimestamp</a></li></ul></li><li><a href="module-modules_duration.Duration.html">modules/duration.Duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.Duration.html#add">add</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asDays">asDays</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asHours">asHours</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMilliseconds">asMilliseconds</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMinutes">asMinutes</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asSeconds">asSeconds</a></li></ul></li><li><a href="module-modules_interval.Interval.html">modules/interval.Interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.Interval.html#contains">contains</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#duration">duration</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getEnd">getEnd</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getStart">getStart</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#overlaps">overlaps</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-core_core.html">core/core</a></li><li><a href="module-core_factory.html">core/factory</a><ul class='methods'><li data-type='method'><a href="module-core_factory.html#.fromComponents">fromComponents</a></li><li data-type='method'><a href="module-core_factory.html#.fromDate">fromDate</a></li><li data-type='method'><a href="module-core_factory.html#.fromISO">fromISO</a></li><li data-type='method'><a href="module-core_factory.html#.fromTimestamp">fromTimestamp</a></li><li data-type='method'><a href="module-core_factory.html#.now">now</a></li></ul></li><li><a href="module-index.html">index</a></li><li><a href="module-modules_arithmetic.html">modules/arithmetic</a><ul class='methods'><li data-type='method'><a href="module-modules_arithmetic.html#.add">add</a></li><li data-type='method'><a href="module-modules_arithmetic.html#.subtract">subtract</a></li></ul></li><li><a href="module-modules_compare.html">modules/compare</a><ul class='methods'><li data-type='method'><a href="module-modules_compare.html#.isAfter">isAfter</a></li><li data-type='method'><a href="module-modules_compare.html#.isBefore">isBefore</a></li><li data-type='method'><a href="module-modules_compare.html#.isBetween">isBetween</a></li><li data-type='method'><a href="module-modules_compare.html#.isSame">isSame</a></li></ul></li><li><a href="module-modules_duration.html">modules/duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.html#.duration">duration</a></li></ul></li><li><a href="module-modules_format.html">modules/format</a><ul class='methods'><li data-type='method'><a href="module-modules_format.html#.format">format</a></li></ul></li><li><a href="module-modules_interval.html">modules/interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.html#.interval">interval</a></li></ul></li><li><a href="module-modules_timezone.html">modules/timezone</a><ul class='methods'><li data-type='method'><a href="module-modules_timezone.html#.getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-modules_timezone.html#.setTimezone">setTimezone</a></li></ul></li><li><a href="module-utils_calendar.html">utils/calendar</a><ul class='methods'><li data-type='method'><a href="module-utils_calendar.html#.addByCalendarUnit">addByCalendarUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.addByFixedUnit">addByFixedUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.daysInMonth">daysInMonth</a></li><li data-type='method'><a href="module-utils_calendar.html#.diff">diff</a></li><li data-type='method'><a href="module-utils_calendar.html#.isLeapYear">isLeapYear</a></li></ul></li><li><a href="module-utils_units.html">utils/units</a><ul class='methods'><li data-type='method'><a href="module-utils_units.html#.isCalendarUnit">isCalendarUnit</a></li><li data-type='method'><a href="module-utils_units.html#.isFixedUnit">isFixedUnit</a></li><li data-type='method'><a href="module-utils_units.html#.normalizeUnit">normalizeUnit</a></li><li data-type='method'><a href="module-utils_units.html#.unitToMilliseconds">unitToMilliseconds</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">utils/calendar</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext"><p>Календарные утилиты для работы с датами, високосными годами
+и разницей между значениями времени.</p></div>
+            
+
+            
+                
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Календарные утилиты для работы с датами, високосными годами
+и разницей между значениями времени.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_calendar.js.html">utils/calendar.js</a>, <a href="utils_calendar.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".addByCalendarUnit"><span class="type-signature type-signature-static">(static) </span>addByCalendarUnit<span class="signature">(timestamp, amount, unit)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Возвращает новый timestamp, увеличенный на указанное количество
+календарных единиц времени.</p>
+<p>Поддерживаются только <code>month</code> и <code>year</code>.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_calendar.js.html">utils/calendar.js</a>, <a href="utils_calendar.js.html#line199">line 199</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { addByCalendarUnit } from './utils/calendar.js';console.log(addByCalendarUnit(Date.UTC(2024, 0, 31, 0, 0, 0, 0), 1, 'month')); // ожидаемый результат: 1709164800000</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>timestamp</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Unix timestamp в миллисекундах.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>amount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Количество единиц времени.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>unit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Календарная единица времени.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если timestamp или amount некорректны.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если unit не поддерживается.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Новый Unix timestamp в миллисекундах.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".addByFixedUnit"><span class="type-signature type-signature-static">(static) </span>addByFixedUnit<span class="signature">(timestamp, amount, unit)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Возвращает новый timestamp, увеличенный на указанное количество
+фиксированных единиц времени.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_calendar.js.html">utils/calendar.js</a>, <a href="utils_calendar.js.html#line169">line 169</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { addByFixedUnit } from './utils/calendar.js';console.log(addByFixedUnit(1716638400000, 1, 'day')); // ожидаемый результат: 1716724800000</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>timestamp</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Unix timestamp в миллисекундах.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>amount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Количество единиц времени.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>unit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Фиксированная единица времени.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если timestamp или amount некорректны.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если unit не является фиксированной единицей.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Новый Unix timestamp в миллисекундах.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".daysInMonth"><span class="type-signature type-signature-static">(static) </span>daysInMonth<span class="signature">(year, month)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Возвращает количество дней в указанном месяце указанного года.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_calendar.js.html">utils/calendar.js</a>, <a href="utils_calendar.js.html#line142">line 142</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { daysInMonth } from 'oz-time';console.log(daysInMonth(2024, 2)); // ожидаемый результат: 29</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Год.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Месяц от 1 до 12.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если year или month не являются целыми числами.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если month вне диапазона от 1 до 12.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">RangeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Количество дней в месяце.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".diff"><span class="type-signature type-signature-static">(static) </span>diff<span class="signature">(left, right, unit<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Возвращает числовую разницу между двумя экземплярами OzTime
+в указанной единице времени.</p>
+<p>Для фиксированных единиц может возвращать дробное число,
+для месяцев и лет возвращает целочисленную календарную разницу.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_calendar.js.html">utils/calendar.js</a>, <a href="utils_calendar.js.html#line256">line 256</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { diff } from './utils/calendar.js';import { fromISO } from 'oz-time';const a = fromISO('2024-05-25T14:00:00Z');const b = fromISO('2024-05-25T12:00:00Z');console.log(diff(a, b, 'hour')); // ожидаемый результат: 2</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>left</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">OzTime</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Левое значение.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>right</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">OzTime</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Правое значение.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>unit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'millisecond'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Единица времени.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если хотя бы один аргумент не является экземпляром OzTime.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если unit не поддерживается.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Разница между двумя значениями времени.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isLeapYear"><span class="type-signature type-signature-static">(static) </span>isLeapYear<span class="signature">(year)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Проверяет, является ли год високосным по григорианскому календарю.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_calendar.js.html">utils/calendar.js</a>, <a href="utils_calendar.js.html#line121">line 121</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { isLeapYear } from 'oz-time';console.log(isLeapYear(2024)); // ожидаемый результат: true</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Год.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если year не является целым числом.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p><code>true</code>, если год високосный.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>modules/format.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-core_core.OzTime.html">core/core.OzTime</a><ul class='methods'><li data-type='method'><a href="module-core_core.OzTime.html#add">add</a></li><li data-type='method'><a href="module-core_core.OzTime.html#diff">diff</a></li><li data-type='method'><a href="module-core_core.OzTime.html#format">format</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getLocale">getLocale</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimestamp">getTimestamp</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezone">getTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isAfter">isAfter</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBefore">isBefore</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBetween">isBetween</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isSame">isSame</a></li><li data-type='method'><a href="module-core_core.OzTime.html#setTimezone">setTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#subtract">subtract</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toISOString">toISOString</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toTimestamp">toTimestamp</a></li></ul></li><li><a href="module-modules_duration.Duration.html">modules/duration.Duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.Duration.html#add">add</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asDays">asDays</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asHours">asHours</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMilliseconds">asMilliseconds</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMinutes">asMinutes</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asSeconds">asSeconds</a></li></ul></li><li><a href="module-modules_interval.Interval.html">modules/interval.Interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.Interval.html#contains">contains</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#duration">duration</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getEnd">getEnd</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getStart">getStart</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#overlaps">overlaps</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-core_core.html">core/core</a></li><li><a href="module-core_factory.html">core/factory</a><ul class='methods'><li data-type='method'><a href="module-core_factory.html#.fromComponents">fromComponents</a></li><li data-type='method'><a href="module-core_factory.html#.fromDate">fromDate</a></li><li data-type='method'><a href="module-core_factory.html#.fromISO">fromISO</a></li><li data-type='method'><a href="module-core_factory.html#.fromTimestamp">fromTimestamp</a></li><li data-type='method'><a href="module-core_factory.html#.now">now</a></li></ul></li><li><a href="module-index.html">index</a></li><li><a href="module-modules_arithmetic.html">modules/arithmetic</a><ul class='methods'><li data-type='method'><a href="module-modules_arithmetic.html#.add">add</a></li><li data-type='method'><a href="module-modules_arithmetic.html#.subtract">subtract</a></li></ul></li><li><a href="module-modules_compare.html">modules/compare</a><ul class='methods'><li data-type='method'><a href="module-modules_compare.html#.isAfter">isAfter</a></li><li data-type='method'><a href="module-modules_compare.html#.isBefore">isBefore</a></li><li data-type='method'><a href="module-modules_compare.html#.isBetween">isBetween</a></li><li data-type='method'><a href="module-modules_compare.html#.isSame">isSame</a></li></ul></li><li><a href="module-modules_duration.html">modules/duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.html#.duration">duration</a></li></ul></li><li><a href="module-modules_format.html">modules/format</a><ul class='methods'><li data-type='method'><a href="module-modules_format.html#.format">format</a></li></ul></li><li><a href="module-modules_interval.html">modules/interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.html#.interval">interval</a></li></ul></li><li><a href="module-modules_timezone.html">modules/timezone</a><ul class='methods'><li data-type='method'><a href="module-modules_timezone.html#.getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-modules_timezone.html#.setTimezone">setTimezone</a></li></ul></li><li><a href="module-utils_calendar.html">utils/calendar</a><ul class='methods'><li data-type='method'><a href="module-utils_calendar.html#.addByCalendarUnit">addByCalendarUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.addByFixedUnit">addByFixedUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.daysInMonth">daysInMonth</a></li><li data-type='method'><a href="module-utils_calendar.html#.diff">diff</a></li><li data-type='method'><a href="module-utils_calendar.html#.isLeapYear">isLeapYear</a></li></ul></li><li><a href="module-utils_units.html">utils/units</a><ul class='methods'><li data-type='method'><a href="module-utils_units.html#.isCalendarUnit">isCalendarUnit</a></li><li data-type='method'><a href="module-utils_units.html#.isFixedUnit">isFixedUnit</a></li><li data-type='method'><a href="module-utils_units.html#.normalizeUnit">normalizeUnit</a></li><li data-type='method'><a href="module-utils_units.html#.unitToMilliseconds">unitToMilliseconds</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">modules/format.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { OzTime } from '../core/core.js';
+
+/**
+ * Модуль форматирования экземпляров {@link OzTime}.
+ *
+ * @module modules/format
+ */
+
+/**
+ * Проверяет, является ли значение экземпляром OzTime.
+ *
+ * @private
+ * @param {*} value - Проверяемое значение.
+ * @throws {TypeError} Выбрасывается, если значение не является экземпляром OzTime.
+ * @returns {void}
+ */
+function assertOzTime(value) {
+    if (!(value instanceof OzTime)) {
+        throw new TypeError('format: first argument must be OzTime');
+    }
+}
+
+/**
+ * Дополняет значение ведущими нулями до нужной длины.
+ *
+ * @private
+ * @param {string|number} value - Исходное значение.
+ * @param {number} [length=2] - Итоговая длина строки.
+ * @returns {string} Строка, дополненная ведущими нулями.
+ */
+function pad(value, length = 2) {
+    return String(value).padStart(length, '0');
+}
+
+/**
+ * Возвращает числовые части даты для форматирования.
+ *
+ * @private
+ * @param {OzTime} time - Экземпляр времени.
+ * @param {string} locale - Локаль форматирования.
+ * @returns {Object.&lt;string, string>} Объект с числовыми частями даты и времени.
+ */
+function getNumericParts(time, locale) {
+    const formatter = new Intl.DateTimeFormat(locale, {
+        timeZone: time.getTimezone(),
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+    });
+
+    const parts = formatter.formatToParts(new Date(time.getTimestamp()));
+    return Object.fromEntries(parts.map((part) => [part.type, part.value]));
+}
+
+/**
+ * Возвращает название месяца в нужном формате.
+ *
+ * @private
+ * @param {OzTime} time - Экземпляр времени.
+ * @param {string} locale - Локаль форматирования.
+ * @param {'long'|'short'|'narrow'} length - Длина названия месяца.
+ * @returns {string} Название месяца.
+ */
+function getMonthName(time, locale, length) {
+    return new Intl.DateTimeFormat(locale, {
+        timeZone: time.getTimezone(),
+        month: length,
+    }).format(new Date(time.getTimestamp()));
+}
+
+/**
+ * Возвращает название дня недели в нужном формате.
+ *
+ * @private
+ * @param {OzTime} time - Экземпляр времени.
+ * @param {string} locale - Локаль форматирования.
+ * @param {'long'|'short'|'narrow'} length - Длина названия дня недели.
+ * @returns {string} Название дня недели.
+ */
+function getWeekdayName(time, locale, length) {
+    return new Intl.DateTimeFormat(locale, {
+        timeZone: time.getTimezone(),
+        weekday: length,
+    }).format(new Date(time.getTimestamp()));
+}
+
+/**
+ * Возвращает строковое представление экземпляра {@link OzTime}
+ * по заданному шаблону с токенами.
+ *
+ * Поддерживаются токены `YYYY`, `YY`, `MMMM`, `MMM`, `MM`, `M`, `dddd`, `ddd`,
+ * `DD`, `D`, `HH`, `H`, `hh`, `h`, `mm`, `ss`, `SSS` и `A`.
+ *
+ * @param {OzTime} time - Экземпляр времени для форматирования.
+ * @param {string} template - Шаблон форматирования.
+ * @param {string} [locale] - Необязательное переопределение локали.
+ * @throws {TypeError} Выбрасывается, если первый аргумент не является экземпляром OzTime или template некорректен.
+ * @returns {string} Отформатированная строка.
+ * @example
+ * import { format, fromISO } from 'oz-time';
+ *
+ * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
+ * console.log(format(time, 'DD.MM.YYYY HH:mm')); // ожидаемый результат: 25.05.2024 12:00
+ */
+export function format(time, template, locale) {
+    assertOzTime(time);
+
+    if (typeof template !== 'string' || template.trim() === '') {
+        throw new TypeError('format: template must be a non-empty string');
+    }
+
+    const usedLocale = locale ?? time.getLocale();
+    const parts = getNumericParts(time, usedLocale);
+
+    const year = Number(parts.year);
+    const month = Number(parts.month);
+    const day = Number(parts.day);
+    const hour24 = Number(parts.hour);
+    const minute = Number(parts.minute);
+    const second = Number(parts.second);
+    const millisecond = new Date(time.getTimestamp()).getUTCMilliseconds();
+
+    const hour12base = hour24 % 12;
+    const hour12 = hour12base === 0 ? 12 : hour12base;
+    const meridiem = hour24 >= 12 ? 'PM' : 'AM';
+
+    const tokens = {
+        YYYY: String(year),
+        YY: String(year).slice(-2),
+
+        MMMM: getMonthName(time, usedLocale, 'long'),
+        MMM: getMonthName(time, usedLocale, 'short'),
+        MM: pad(month),
+        M: String(month),
+
+        dddd: getWeekdayName(time, usedLocale, 'long'),
+        ddd: getWeekdayName(time, usedLocale, 'short'),
+
+        DD: pad(day),
+        D: String(day),
+
+        HH: pad(hour24),
+        H: String(hour24),
+
+        hh: pad(hour12),
+        h: String(hour12),
+
+        mm: pad(minute),
+        ss: pad(second),
+        SSS: pad(millisecond, 3),
+
+        A: meridiem,
+    };
+
+    const tokenPattern = /YYYY|MMMM|MMM|MM|M|dddd|ddd|DD|D|HH|H|hh|h|mm|ss|SSS|YY|A/g;
+
+    return template.replace(tokenPattern, (token) => tokens[token] ?? token);
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

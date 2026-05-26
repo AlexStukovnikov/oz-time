@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>modules/interval.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-core_core.OzTime.html">core/core.OzTime</a><ul class='methods'><li data-type='method'><a href="module-core_core.OzTime.html#add">add</a></li><li data-type='method'><a href="module-core_core.OzTime.html#diff">diff</a></li><li data-type='method'><a href="module-core_core.OzTime.html#format">format</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getLocale">getLocale</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimestamp">getTimestamp</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezone">getTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isAfter">isAfter</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBefore">isBefore</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBetween">isBetween</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isSame">isSame</a></li><li data-type='method'><a href="module-core_core.OzTime.html#setTimezone">setTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#subtract">subtract</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toISOString">toISOString</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toTimestamp">toTimestamp</a></li></ul></li><li><a href="module-modules_duration.Duration.html">modules/duration.Duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.Duration.html#add">add</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asDays">asDays</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asHours">asHours</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMilliseconds">asMilliseconds</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMinutes">asMinutes</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asSeconds">asSeconds</a></li></ul></li><li><a href="module-modules_interval.Interval.html">modules/interval.Interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.Interval.html#contains">contains</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#duration">duration</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getEnd">getEnd</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getStart">getStart</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#overlaps">overlaps</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-core_core.html">core/core</a></li><li><a href="module-core_factory.html">core/factory</a><ul class='methods'><li data-type='method'><a href="module-core_factory.html#.fromComponents">fromComponents</a></li><li data-type='method'><a href="module-core_factory.html#.fromDate">fromDate</a></li><li data-type='method'><a href="module-core_factory.html#.fromISO">fromISO</a></li><li data-type='method'><a href="module-core_factory.html#.fromTimestamp">fromTimestamp</a></li><li data-type='method'><a href="module-core_factory.html#.now">now</a></li></ul></li><li><a href="module-index.html">index</a></li><li><a href="module-modules_arithmetic.html">modules/arithmetic</a><ul class='methods'><li data-type='method'><a href="module-modules_arithmetic.html#.add">add</a></li><li data-type='method'><a href="module-modules_arithmetic.html#.subtract">subtract</a></li></ul></li><li><a href="module-modules_compare.html">modules/compare</a><ul class='methods'><li data-type='method'><a href="module-modules_compare.html#.isAfter">isAfter</a></li><li data-type='method'><a href="module-modules_compare.html#.isBefore">isBefore</a></li><li data-type='method'><a href="module-modules_compare.html#.isBetween">isBetween</a></li><li data-type='method'><a href="module-modules_compare.html#.isSame">isSame</a></li></ul></li><li><a href="module-modules_duration.html">modules/duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.html#.duration">duration</a></li></ul></li><li><a href="module-modules_format.html">modules/format</a><ul class='methods'><li data-type='method'><a href="module-modules_format.html#.format">format</a></li></ul></li><li><a href="module-modules_interval.html">modules/interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.html#.interval">interval</a></li></ul></li><li><a href="module-modules_timezone.html">modules/timezone</a><ul class='methods'><li data-type='method'><a href="module-modules_timezone.html#.getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-modules_timezone.html#.setTimezone">setTimezone</a></li></ul></li><li><a href="module-utils_calendar.html">utils/calendar</a><ul class='methods'><li data-type='method'><a href="module-utils_calendar.html#.addByCalendarUnit">addByCalendarUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.addByFixedUnit">addByFixedUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.daysInMonth">daysInMonth</a></li><li data-type='method'><a href="module-utils_calendar.html#.diff">diff</a></li><li data-type='method'><a href="module-utils_calendar.html#.isLeapYear">isLeapYear</a></li></ul></li><li><a href="module-utils_units.html">utils/units</a><ul class='methods'><li data-type='method'><a href="module-utils_units.html#.isCalendarUnit">isCalendarUnit</a></li><li data-type='method'><a href="module-utils_units.html#.isFixedUnit">isFixedUnit</a></li><li data-type='method'><a href="module-utils_units.html#.normalizeUnit">normalizeUnit</a></li><li data-type='method'><a href="module-utils_units.html#.unitToMilliseconds">unitToMilliseconds</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">modules/interval.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { OzTime } from '../core/core.js';
+import { normalizeUnit, isFixedUnit, unitToMilliseconds } from '../utils/units.js';
+
+/**
+ * Модуль интервалов времени.
+ *
+ * @module modules/interval
+ */
+
+/**
+ * Проверяет, является ли значение экземпляром OzTime.
+ *
+ * @private
+ * @param {*} value - Проверяемое значение.
+ * @param {string} name - Имя параметра.
+ * @throws {TypeError} Выбрасывается, если значение не является экземпляром OzTime.
+ * @returns {void}
+ */
+function assertOzTime(value, name) {
+    if (!(value instanceof OzTime)) {
+        throw new TypeError(`${name} must be OzTime`);
+    }
+}
+
+/**
+ * Представляет замкнутый интервал между двумя значениями времени.
+ *
+ * @class
+ * @example
+ * import { Interval, fromISO } from 'oz-time';
+ *
+ * const start = fromISO('2024-05-25T10:00:00Z');
+ * const end = fromISO('2024-05-25T12:00:00Z');
+ * const range = new Interval(start, end);
+ * console.log(range.contains(fromISO('2024-05-25T11:00:00Z'))); // ожидаемый результат: true
+ */
+export class Interval {
+    /**
+     * Создаёт новый экземпляр Interval.
+     *
+     * @param {OzTime} start - Начало интервала.
+     * @param {OzTime} end - Конец интервала.
+     * @throws {TypeError} Выбрасывается, если start или end не являются экземплярами OzTime.
+     * @throws {RangeError} Выбрасывается, если start больше end.
+     */
+    constructor(start, end) {
+        assertOzTime(start, 'start');
+        assertOzTime(end, 'end');
+
+        if (start.getTimestamp() > end.getTimestamp()) {
+            throw new RangeError('Interval: start must be before or equal to end');
+        }
+
+        this._start = start;
+        this._end = end;
+    }
+
+    /**
+     * Возвращает начало интервала.
+     *
+     * @returns {OzTime} Начальная граница интервала.
+     * @example
+     * import { Interval, fromISO } from 'oz-time';
+     *
+     * const range = new Interval(
+     *   fromISO('2024-05-25T10:00:00Z'),
+     *   fromISO('2024-05-25T12:00:00Z')
+     * );
+     * console.log(range.getStart().toISOString()); // ожидаемый результат: 2024-05-25T10:00:00.000Z
+     */
+    getStart() {
+        return this._start;
+    }
+
+    /**
+     * Возвращает конец интервала.
+     *
+     * @returns {OzTime} Конечная граница интервала.
+     * @example
+     * import { Interval, fromISO } from 'oz-time';
+     *
+     * const range = new Interval(
+     *   fromISO('2024-05-25T10:00:00Z'),
+     *   fromISO('2024-05-25T12:00:00Z')
+     * );
+     * console.log(range.getEnd().toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z
+     */
+    getEnd() {
+        return this._end;
+    }
+
+    /**
+     * Проверяет, содержит ли интервал переданное значение времени.
+     *
+     * @param {OzTime} moment - Проверяемое значение.
+     * @throws {TypeError} Выбрасывается, если moment не является экземпляром OzTime.
+     * @returns {boolean} `true`, если значение входит в интервал.
+     * @example
+     * import { Interval, fromISO } from 'oz-time';
+     *
+     * const range = new Interval(
+     *   fromISO('2024-05-25T10:00:00Z'),
+     *   fromISO('2024-05-25T12:00:00Z')
+     * );
+     * console.log(range.contains(fromISO('2024-05-25T11:00:00Z'))); // ожидаемый результат: true
+     */
+    contains(moment) {
+        assertOzTime(moment, 'moment');
+
+        const ts = moment.getTimestamp();
+        return ts >= this._start.getTimestamp() &amp;&amp; ts &lt;= this._end.getTimestamp();
+    }
+
+    /**
+     * Проверяет, пересекается ли текущий интервал с другим интервалом.
+     *
+     * @param {Interval} other - Второй интервал.
+     * @throws {TypeError} Выбрасывается, если other не является экземпляром Interval.
+     * @returns {boolean} `true`, если интервалы пересекаются.
+     * @example
+     * import { Interval, fromISO } from 'oz-time';
+     *
+     * const a = new Interval(
+     *   fromISO('2024-05-25T10:00:00Z'),
+     *   fromISO('2024-05-25T12:00:00Z')
+     * );
+     * const b = new Interval(
+     *   fromISO('2024-05-25T11:00:00Z'),
+     *   fromISO('2024-05-25T13:00:00Z')
+     * );
+     * console.log(a.overlaps(b)); // ожидаемый результат: true
+     */
+    overlaps(other) {
+        if (!(other instanceof Interval)) {
+            throw new TypeError('other must be Interval');
+        }
+
+        const startA = this._start.getTimestamp();
+        const endA = this._end.getTimestamp();
+        const startB = other.getStart().getTimestamp();
+        const endB = other.getEnd().getTimestamp();
+
+        return startA &lt;= endB &amp;&amp; startB &lt;= endA;
+    }
+
+    /**
+     * Возвращает длительность интервала в фиксированной единице времени.
+     *
+     * @param {string} [unit='millisecond'] - Фиксированная единица времени.
+     * @throws {Error} Выбрасывается, если unit не является фиксированной единицей времени.
+     * @returns {number} Длительность интервала в указанной единице.
+     * @example
+     * import { Interval, fromISO } from 'oz-time';
+     *
+     * const range = new Interval(
+     *   fromISO('2024-05-25T10:00:00Z'),
+     *   fromISO('2024-05-25T12:00:00Z')
+     * );
+     * console.log(range.duration('hour')); // ожидаемый результат: 2
+     */
+    duration(unit = 'millisecond') {
+        const normalizedUnit = normalizeUnit(unit);
+
+        if (!isFixedUnit(normalizedUnit)) {
+            throw new Error(`Interval.duration supports only fixed units: ${unit}`);
+        }
+
+        const diffMs = this._end.getTimestamp() - this._start.getTimestamp();
+        return diffMs / unitToMilliseconds(normalizedUnit);
+    }
+}
+
+/**
+ * Создаёт и возвращает экземпляр {@link Interval}.
+ *
+ * @param {OzTime} start - Начало интервала.
+ * @param {OzTime} end - Конец интервала.
+ * @returns {Interval} Новый экземпляр Interval.
+ * @example
+ * import { interval, fromISO } from 'oz-time';
+ *
+ * const range = interval(
+ *   fromISO('2024-05-25T10:00:00Z'),
+ *   fromISO('2024-05-25T12:00:00Z')
+ * );
+ * console.log(range.duration('hour')); // ожидаемый результат: 2
+ */
+export function interval(start, end) {
+    return new Interval(start, end);
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>core/factory - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-core_core.OzTime.html">core/core.OzTime</a><ul class='methods'><li data-type='method'><a href="module-core_core.OzTime.html#add">add</a></li><li data-type='method'><a href="module-core_core.OzTime.html#diff">diff</a></li><li data-type='method'><a href="module-core_core.OzTime.html#format">format</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getLocale">getLocale</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimestamp">getTimestamp</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezone">getTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isAfter">isAfter</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBefore">isBefore</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBetween">isBetween</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isSame">isSame</a></li><li data-type='method'><a href="module-core_core.OzTime.html#setTimezone">setTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#subtract">subtract</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toISOString">toISOString</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toTimestamp">toTimestamp</a></li></ul></li><li><a href="module-modules_duration.Duration.html">modules/duration.Duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.Duration.html#add">add</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asDays">asDays</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asHours">asHours</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMilliseconds">asMilliseconds</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMinutes">asMinutes</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asSeconds">asSeconds</a></li></ul></li><li><a href="module-modules_interval.Interval.html">modules/interval.Interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.Interval.html#contains">contains</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#duration">duration</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getEnd">getEnd</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getStart">getStart</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#overlaps">overlaps</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-core_core.html">core/core</a></li><li><a href="module-core_factory.html">core/factory</a><ul class='methods'><li data-type='method'><a href="module-core_factory.html#.fromComponents">fromComponents</a></li><li data-type='method'><a href="module-core_factory.html#.fromDate">fromDate</a></li><li data-type='method'><a href="module-core_factory.html#.fromISO">fromISO</a></li><li data-type='method'><a href="module-core_factory.html#.fromTimestamp">fromTimestamp</a></li><li data-type='method'><a href="module-core_factory.html#.now">now</a></li></ul></li><li><a href="module-index.html">index</a></li><li><a href="module-modules_arithmetic.html">modules/arithmetic</a><ul class='methods'><li data-type='method'><a href="module-modules_arithmetic.html#.add">add</a></li><li data-type='method'><a href="module-modules_arithmetic.html#.subtract">subtract</a></li></ul></li><li><a href="module-modules_compare.html">modules/compare</a><ul class='methods'><li data-type='method'><a href="module-modules_compare.html#.isAfter">isAfter</a></li><li data-type='method'><a href="module-modules_compare.html#.isBefore">isBefore</a></li><li data-type='method'><a href="module-modules_compare.html#.isBetween">isBetween</a></li><li data-type='method'><a href="module-modules_compare.html#.isSame">isSame</a></li></ul></li><li><a href="module-modules_duration.html">modules/duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.html#.duration">duration</a></li></ul></li><li><a href="module-modules_format.html">modules/format</a><ul class='methods'><li data-type='method'><a href="module-modules_format.html#.format">format</a></li></ul></li><li><a href="module-modules_interval.html">modules/interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.html#.interval">interval</a></li></ul></li><li><a href="module-modules_timezone.html">modules/timezone</a><ul class='methods'><li data-type='method'><a href="module-modules_timezone.html#.getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-modules_timezone.html#.setTimezone">setTimezone</a></li></ul></li><li><a href="module-utils_calendar.html">utils/calendar</a><ul class='methods'><li data-type='method'><a href="module-utils_calendar.html#.addByCalendarUnit">addByCalendarUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.addByFixedUnit">addByFixedUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.daysInMonth">daysInMonth</a></li><li data-type='method'><a href="module-utils_calendar.html#.diff">diff</a></li><li data-type='method'><a href="module-utils_calendar.html#.isLeapYear">isLeapYear</a></li></ul></li><li><a href="module-utils_units.html">utils/units</a><ul class='methods'><li data-type='method'><a href="module-utils_units.html#.isCalendarUnit">isCalendarUnit</a></li><li data-type='method'><a href="module-utils_units.html#.isFixedUnit">isFixedUnit</a></li><li data-type='method'><a href="module-utils_units.html#.normalizeUnit">normalizeUnit</a></li><li data-type='method'><a href="module-utils_units.html#.unitToMilliseconds">unitToMilliseconds</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">core/factory</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext"><p>Фабричные функции для создания экземпляров OzTime.</p></div>
+            
+
+            
+                
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Фабричные функции для создания экземпляров OzTime.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_factory.js.html">core/factory.js</a>, <a href="core_factory.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".fromComponents"><span class="type-signature type-signature-static">(static) </span>fromComponents<span class="signature">(year, month, day, hour<span class="signature-attributes">opt</span>, minute<span class="signature-attributes">opt</span>, second<span class="signature-attributes">opt</span>, ms<span class="signature-attributes">opt</span>, timezone<span class="signature-attributes">opt</span>, locale<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {OzTime}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Создаёт и возвращает экземпляр OzTime на основе отдельных компонентов даты и времени.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_factory.js.html">core/factory.js</a>, <a href="core_factory.js.html#line157">line 157</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { fromComponents } from 'oz-time';const time = fromComponents(2024, 5, 25, 12, 0, 0, 0, 'UTC', 'ru-RU');console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Год.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Месяц от 1 до 12.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>day</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>День месяца.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>hour</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Час от 0 до 23.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>minute</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Минута от 0 до 59.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>second</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Секунда от 0 до 59.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ms</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Миллисекунда от 0 до 999.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timezone</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'UTC'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Часовой пояс в формате IANA.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>locale</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'en-US'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Локаль форматирования.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если любой числовой параметр не является целым числом.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если любой компонент даты или времени вне допустимого диапазона.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">RangeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Экземпляр времени.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">OzTime</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".fromDate"><span class="type-signature type-signature-static">(static) </span>fromDate<span class="signature">(date, timezone<span class="signature-attributes">opt</span>, locale<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {OzTime}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Создаёт и возвращает экземпляр OzTime на основе объекта Date.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_factory.js.html">core/factory.js</a>, <a href="core_factory.js.html#line102">line 102</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { fromDate } from 'oz-time';const time = fromDate(new Date('2024-05-25T12:00:00Z'), 'UTC', 'ru-RU');console.log(time.toTimestamp()); // ожидаемый результат: 1716638400000</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>date</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Нативный объект Date.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timezone</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'UTC'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Часовой пояс в формате IANA.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>locale</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'en-US'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Локаль форматирования.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если date некорректен.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Экземпляр времени.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">OzTime</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".fromISO"><span class="type-signature type-signature-static">(static) </span>fromISO<span class="signature">(isoString, timezone<span class="signature-attributes">opt</span>, locale<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {OzTime}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Создаёт и возвращает экземпляр OzTime на основе ISO-строки.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_factory.js.html">core/factory.js</a>, <a href="core_factory.js.html#line122">line 122</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { fromISO } from 'oz-time';const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');console.log(time.format('DD.MM.YYYY HH:mm')); // ожидаемый результат: 25.05.2024 12:00</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>isoString</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Строка даты и времени в формате ISO 8601.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timezone</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'UTC'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Часовой пояс в формате IANA.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>locale</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'en-US'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Локаль форматирования.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если строка пустая или не является строкой.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если строку не удалось распарсить.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Экземпляр времени.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">OzTime</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".fromTimestamp"><span class="type-signature type-signature-static">(static) </span>fromTimestamp<span class="signature">(timestamp, timezone<span class="signature-attributes">opt</span>, locale<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {OzTime}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Создаёт и возвращает экземпляр OzTime на основе Unix timestamp.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_factory.js.html">core/factory.js</a>, <a href="core_factory.js.html#line83">line 83</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { fromTimestamp } from 'oz-time';const time = fromTimestamp(1716638400000, 'UTC', 'ru-RU');console.log(time.toISOString()); // ожидаемый результат: 2024-05-25T12:00:00.000Z</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>timestamp</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Unix timestamp в миллисекундах.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timezone</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'UTC'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Часовой пояс в формате IANA.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>locale</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'en-US'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Локаль форматирования.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если timestamp некорректен.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Экземпляр времени.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">OzTime</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".now"><span class="type-signature type-signature-static">(static) </span>now<span class="signature">(timezone<span class="signature-attributes">opt</span>, locale<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {OzTime}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Создаёт и возвращает экземпляр OzTime для текущего момента времени.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_factory.js.html">core/factory.js</a>, <a href="core_factory.js.html#line65">line 65</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { now } from 'oz-time';const current = now('Europe/Moscow', 'ru-RU');console.log(current.getTimezone()); // ожидаемый результат: Europe/Moscow</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>timezone</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'UTC'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Часовой пояс в формате IANA.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>locale</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'en-US'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Локаль форматирования.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Экземпляр с текущим временем.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">OzTime</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

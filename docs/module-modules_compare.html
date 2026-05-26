@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>modules/compare - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-core_core.OzTime.html">core/core.OzTime</a><ul class='methods'><li data-type='method'><a href="module-core_core.OzTime.html#add">add</a></li><li data-type='method'><a href="module-core_core.OzTime.html#diff">diff</a></li><li data-type='method'><a href="module-core_core.OzTime.html#format">format</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getLocale">getLocale</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimestamp">getTimestamp</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezone">getTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isAfter">isAfter</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBefore">isBefore</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBetween">isBetween</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isSame">isSame</a></li><li data-type='method'><a href="module-core_core.OzTime.html#setTimezone">setTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#subtract">subtract</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toISOString">toISOString</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toTimestamp">toTimestamp</a></li></ul></li><li><a href="module-modules_duration.Duration.html">modules/duration.Duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.Duration.html#add">add</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asDays">asDays</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asHours">asHours</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMilliseconds">asMilliseconds</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMinutes">asMinutes</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asSeconds">asSeconds</a></li></ul></li><li><a href="module-modules_interval.Interval.html">modules/interval.Interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.Interval.html#contains">contains</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#duration">duration</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getEnd">getEnd</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getStart">getStart</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#overlaps">overlaps</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-core_core.html">core/core</a></li><li><a href="module-core_factory.html">core/factory</a><ul class='methods'><li data-type='method'><a href="module-core_factory.html#.fromComponents">fromComponents</a></li><li data-type='method'><a href="module-core_factory.html#.fromDate">fromDate</a></li><li data-type='method'><a href="module-core_factory.html#.fromISO">fromISO</a></li><li data-type='method'><a href="module-core_factory.html#.fromTimestamp">fromTimestamp</a></li><li data-type='method'><a href="module-core_factory.html#.now">now</a></li></ul></li><li><a href="module-index.html">index</a></li><li><a href="module-modules_arithmetic.html">modules/arithmetic</a><ul class='methods'><li data-type='method'><a href="module-modules_arithmetic.html#.add">add</a></li><li data-type='method'><a href="module-modules_arithmetic.html#.subtract">subtract</a></li></ul></li><li><a href="module-modules_compare.html">modules/compare</a><ul class='methods'><li data-type='method'><a href="module-modules_compare.html#.isAfter">isAfter</a></li><li data-type='method'><a href="module-modules_compare.html#.isBefore">isBefore</a></li><li data-type='method'><a href="module-modules_compare.html#.isBetween">isBetween</a></li><li data-type='method'><a href="module-modules_compare.html#.isSame">isSame</a></li></ul></li><li><a href="module-modules_duration.html">modules/duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.html#.duration">duration</a></li></ul></li><li><a href="module-modules_format.html">modules/format</a><ul class='methods'><li data-type='method'><a href="module-modules_format.html#.format">format</a></li></ul></li><li><a href="module-modules_interval.html">modules/interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.html#.interval">interval</a></li></ul></li><li><a href="module-modules_timezone.html">modules/timezone</a><ul class='methods'><li data-type='method'><a href="module-modules_timezone.html#.getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-modules_timezone.html#.setTimezone">setTimezone</a></li></ul></li><li><a href="module-utils_calendar.html">utils/calendar</a><ul class='methods'><li data-type='method'><a href="module-utils_calendar.html#.addByCalendarUnit">addByCalendarUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.addByFixedUnit">addByFixedUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.daysInMonth">daysInMonth</a></li><li data-type='method'><a href="module-utils_calendar.html#.diff">diff</a></li><li data-type='method'><a href="module-utils_calendar.html#.isLeapYear">isLeapYear</a></li></ul></li><li><a href="module-utils_units.html">utils/units</a><ul class='methods'><li data-type='method'><a href="module-utils_units.html#.isCalendarUnit">isCalendarUnit</a></li><li data-type='method'><a href="module-utils_units.html#.isFixedUnit">isFixedUnit</a></li><li data-type='method'><a href="module-utils_units.html#.normalizeUnit">normalizeUnit</a></li><li data-type='method'><a href="module-utils_units.html#.unitToMilliseconds">unitToMilliseconds</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">modules/compare</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext"><p>Модуль сравнений для экземпляров OzTime.</p></div>
+            
+
+            
+                
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Модуль сравнений для экземпляров OzTime.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_compare.js.html">modules/compare.js</a>, <a href="modules_compare.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isAfter"><span class="type-signature type-signature-static">(static) </span>isAfter<span class="signature">(a, b, unit<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Проверяет, находится ли первое значение позже второго
+с учётом заданной точности.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_compare.js.html">modules/compare.js</a>, <a href="modules_compare.js.html#line143">line 143</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { isAfter, fromISO } from 'oz-time';const a = fromISO('2024-05-26T12:00:00Z');const b = fromISO('2024-05-25T12:00:00Z');console.log(isAfter(a, b)); // ожидаемый результат: true</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">OzTime</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Первое значение.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">OzTime</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Второе значение.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>unit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'millisecond'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Точность сравнения.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если хотя бы один аргумент не является экземпляром OzTime.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p><code>true</code>, если первое значение позже второго.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isBefore"><span class="type-signature type-signature-static">(static) </span>isBefore<span class="signature">(a, b, unit<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Проверяет, находится ли первое значение раньше второго
+с учётом заданной точности.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_compare.js.html">modules/compare.js</a>, <a href="modules_compare.js.html#line117">line 117</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { isBefore, fromISO } from 'oz-time';const a = fromISO('2024-05-25T12:00:00Z');const b = fromISO('2024-05-26T12:00:00Z');console.log(isBefore(a, b)); // ожидаемый результат: true</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">OzTime</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Первое значение.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">OzTime</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Второе значение.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>unit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'millisecond'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Точность сравнения.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если хотя бы один аргумент не является экземпляром OzTime.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p><code>true</code>, если первое значение раньше второго.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isBetween"><span class="type-signature type-signature-static">(static) </span>isBetween<span class="signature">(target, left, right, unit<span class="signature-attributes">opt</span>, inclusivity<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Проверяет, попадает ли целевое значение в диапазон между двумя границами
+с учётом заданной точности.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_compare.js.html">modules/compare.js</a>, <a href="modules_compare.js.html#line173">line 173</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { isBetween, fromISO } from 'oz-time';const target = fromISO('2024-05-25T12:00:00Z');const start = fromISO('2024-05-25T10:00:00Z');const end = fromISO('2024-05-25T14:00:00Z');console.log(isBetween(target, start, end)); // ожидаемый результат: true</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">OzTime</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Проверяемое значение.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>left</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">OzTime</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Левая граница.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>right</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">OzTime</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Правая граница.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>unit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'millisecond'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Точность сравнения.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inclusivity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">'[]'</span>
+|
+
+<span class="param-type">'[)'</span>
+|
+
+<span class="param-type">'(]'</span>
+|
+
+<span class="param-type">'()'</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'[]'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Формат включённости границ.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+<ul>
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если хотя бы один аргумент не является экземпляром OzTime.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    
+        <li>
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если inclusivity задан некорректно.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+    </ul>
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p><code>true</code>, если значение находится внутри диапазона.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isSame"><span class="type-signature type-signature-static">(static) </span>isSame<span class="signature">(a, b, unit<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Проверяет, равны ли два значения времени с учётом заданной точности.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_compare.js.html">modules/compare.js</a>, <a href="modules_compare.js.html#line91">line 91</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>import { isSame, fromISO } from 'oz-time';const a = fromISO('2024-05-25T12:00:00.100Z');const b = fromISO('2024-05-25T12:00:00.900Z');console.log(isSame(a, b, 'second')); // ожидаемый результат: true</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">OzTime</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Первое значение.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">OzTime</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Второе значение.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>unit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'millisecond'</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Точность сравнения.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Выбрасывается, если хотя бы один аргумент не является экземпляром OzTime.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p><code>true</code>, если значения равны на заданной точности.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

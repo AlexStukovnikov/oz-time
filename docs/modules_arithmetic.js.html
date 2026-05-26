@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>modules/arithmetic.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-core_core.OzTime.html">core/core.OzTime</a><ul class='methods'><li data-type='method'><a href="module-core_core.OzTime.html#add">add</a></li><li data-type='method'><a href="module-core_core.OzTime.html#diff">diff</a></li><li data-type='method'><a href="module-core_core.OzTime.html#format">format</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getLocale">getLocale</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimestamp">getTimestamp</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezone">getTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isAfter">isAfter</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBefore">isBefore</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBetween">isBetween</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isSame">isSame</a></li><li data-type='method'><a href="module-core_core.OzTime.html#setTimezone">setTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#subtract">subtract</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toISOString">toISOString</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toTimestamp">toTimestamp</a></li></ul></li><li><a href="module-modules_duration.Duration.html">modules/duration.Duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.Duration.html#add">add</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asDays">asDays</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asHours">asHours</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMilliseconds">asMilliseconds</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMinutes">asMinutes</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asSeconds">asSeconds</a></li></ul></li><li><a href="module-modules_interval.Interval.html">modules/interval.Interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.Interval.html#contains">contains</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#duration">duration</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getEnd">getEnd</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getStart">getStart</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#overlaps">overlaps</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-core_core.html">core/core</a></li><li><a href="module-core_factory.html">core/factory</a><ul class='methods'><li data-type='method'><a href="module-core_factory.html#.fromComponents">fromComponents</a></li><li data-type='method'><a href="module-core_factory.html#.fromDate">fromDate</a></li><li data-type='method'><a href="module-core_factory.html#.fromISO">fromISO</a></li><li data-type='method'><a href="module-core_factory.html#.fromTimestamp">fromTimestamp</a></li><li data-type='method'><a href="module-core_factory.html#.now">now</a></li></ul></li><li><a href="module-index.html">index</a></li><li><a href="module-modules_arithmetic.html">modules/arithmetic</a><ul class='methods'><li data-type='method'><a href="module-modules_arithmetic.html#.add">add</a></li><li data-type='method'><a href="module-modules_arithmetic.html#.subtract">subtract</a></li></ul></li><li><a href="module-modules_compare.html">modules/compare</a><ul class='methods'><li data-type='method'><a href="module-modules_compare.html#.isAfter">isAfter</a></li><li data-type='method'><a href="module-modules_compare.html#.isBefore">isBefore</a></li><li data-type='method'><a href="module-modules_compare.html#.isBetween">isBetween</a></li><li data-type='method'><a href="module-modules_compare.html#.isSame">isSame</a></li></ul></li><li><a href="module-modules_duration.html">modules/duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.html#.duration">duration</a></li></ul></li><li><a href="module-modules_format.html">modules/format</a><ul class='methods'><li data-type='method'><a href="module-modules_format.html#.format">format</a></li></ul></li><li><a href="module-modules_interval.html">modules/interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.html#.interval">interval</a></li></ul></li><li><a href="module-modules_timezone.html">modules/timezone</a><ul class='methods'><li data-type='method'><a href="module-modules_timezone.html#.getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-modules_timezone.html#.setTimezone">setTimezone</a></li></ul></li><li><a href="module-utils_calendar.html">utils/calendar</a><ul class='methods'><li data-type='method'><a href="module-utils_calendar.html#.addByCalendarUnit">addByCalendarUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.addByFixedUnit">addByFixedUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.daysInMonth">daysInMonth</a></li><li data-type='method'><a href="module-utils_calendar.html#.diff">diff</a></li><li data-type='method'><a href="module-utils_calendar.html#.isLeapYear">isLeapYear</a></li></ul></li><li><a href="module-utils_units.html">utils/units</a><ul class='methods'><li data-type='method'><a href="module-utils_units.html#.isCalendarUnit">isCalendarUnit</a></li><li data-type='method'><a href="module-utils_units.html#.isFixedUnit">isFixedUnit</a></li><li data-type='method'><a href="module-utils_units.html#.normalizeUnit">normalizeUnit</a></li><li data-type='method'><a href="module-utils_units.html#.unitToMilliseconds">unitToMilliseconds</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">modules/arithmetic.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { OzTime } from '../core/core.js';
+import { normalizeUnit, isFixedUnit, isCalendarUnit } from '../utils/units.js';
+import { addByFixedUnit, addByCalendarUnit } from '../utils/calendar.js';
+
+/**
+ * Модуль арифметических операций над экземплярами {@link OzTime}.
+ *
+ * @module modules/arithmetic
+ */
+
+/**
+ * Проверяет, является ли значение экземпляром OzTime.
+ *
+ * @private
+ * @param {*} value - Проверяемое значение.
+ * @param {string} name - Имя параметра.
+ * @throws {TypeError} Выбрасывается, если значение не является экземпляром OzTime.
+ * @returns {void}
+ */
+function assertOzTime(value, name) {
+    if (!(value instanceof OzTime)) {
+        throw new TypeError(`${name} must be OzTime`);
+    }
+}
+
+/**
+ * Проверяет корректность числового значения amount.
+ *
+ * @private
+ * @param {number} amount - Количество единиц времени.
+ * @throws {TypeError} Выбрасывается, если amount не является корректным числом.
+ * @returns {void}
+ */
+function assertAmount(amount) {
+    if (typeof amount !== 'number' || Number.isNaN(amount)) {
+        throw new TypeError('amount must be a valid number');
+    }
+}
+
+/**
+ * Возвращает новый экземпляр {@link OzTime}, у которого timestamp увеличен
+ * на указанное количество единиц времени.
+ *
+ * Поддерживает как фиксированные, так и календарные единицы времени.
+ * Исходный экземпляр не изменяется.
+ *
+ * @param {OzTime} time - Исходное значение времени.
+ * @param {number} amount - Количество единиц времени.
+ * @param {string} unit - Единица времени.
+ * @throws {TypeError} Выбрасывается, если time или amount некорректны.
+ * @returns {OzTime} Новый экземпляр OzTime с timestamp, сдвинутым вперёд.
+ * @example
+ * import { add, fromISO } from 'oz-time';
+ *
+ * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
+ * const result = add(time, 2, 'day');
+ * console.log(result.toISOString()); // ожидаемый результат: 2024-05-27T12:00:00.000Z
+ */
+export function add(time, amount, unit) {
+    assertOzTime(time, 'time');
+    assertAmount(amount);
+
+    const normalizedUnit = normalizeUnit(unit);
+    const timestamp = time.getTimestamp();
+
+    let nextTimestamp;
+
+    if (isFixedUnit(normalizedUnit)) {
+        nextTimestamp = addByFixedUnit(timestamp, amount, normalizedUnit);
+    } else if (isCalendarUnit(normalizedUnit)) {
+        nextTimestamp = addByCalendarUnit(timestamp, amount, normalizedUnit);
+    }
+
+    return new OzTime(nextTimestamp, time.getTimezone(), time.getLocale());
+}
+
+/**
+ * Возвращает новый экземпляр {@link OzTime}, у которого timestamp уменьшен
+ * на указанное количество единиц времени.
+ *
+ * Исходный экземпляр не изменяется.
+ *
+ * @param {OzTime} time - Исходное значение времени.
+ * @param {number} amount - Количество единиц времени.
+ * @param {string} unit - Единица времени.
+ * @throws {TypeError} Выбрасывается, если time или amount некорректны.
+ * @returns {OzTime} Новый экземпляр OzTime с timestamp, сдвинутым назад.
+ * @example
+ * import { subtract, fromISO } from 'oz-time';
+ *
+ * const time = fromISO('2024-05-25T12:00:00Z', 'UTC', 'ru-RU');
+ * const result = subtract(time, 3, 'hour');
+ * console.log(result.toISOString()); // ожидаемый результат: 2024-05-25T09:00:00.000Z
+ */
+export function subtract(time, amount, unit) {
+    assertOzTime(time, 'time');
+    assertAmount(amount);
+
+    return add(time, -amount, unit);
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

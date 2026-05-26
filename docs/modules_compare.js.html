@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>modules/compare.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-core_core.OzTime.html">core/core.OzTime</a><ul class='methods'><li data-type='method'><a href="module-core_core.OzTime.html#add">add</a></li><li data-type='method'><a href="module-core_core.OzTime.html#diff">diff</a></li><li data-type='method'><a href="module-core_core.OzTime.html#format">format</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getLocale">getLocale</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimestamp">getTimestamp</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezone">getTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isAfter">isAfter</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBefore">isBefore</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isBetween">isBetween</a></li><li data-type='method'><a href="module-core_core.OzTime.html#isSame">isSame</a></li><li data-type='method'><a href="module-core_core.OzTime.html#setTimezone">setTimezone</a></li><li data-type='method'><a href="module-core_core.OzTime.html#subtract">subtract</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toISOString">toISOString</a></li><li data-type='method'><a href="module-core_core.OzTime.html#toTimestamp">toTimestamp</a></li></ul></li><li><a href="module-modules_duration.Duration.html">modules/duration.Duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.Duration.html#add">add</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asDays">asDays</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asHours">asHours</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMilliseconds">asMilliseconds</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asMinutes">asMinutes</a></li><li data-type='method'><a href="module-modules_duration.Duration.html#asSeconds">asSeconds</a></li></ul></li><li><a href="module-modules_interval.Interval.html">modules/interval.Interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.Interval.html#contains">contains</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#duration">duration</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getEnd">getEnd</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#getStart">getStart</a></li><li data-type='method'><a href="module-modules_interval.Interval.html#overlaps">overlaps</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-core_core.html">core/core</a></li><li><a href="module-core_factory.html">core/factory</a><ul class='methods'><li data-type='method'><a href="module-core_factory.html#.fromComponents">fromComponents</a></li><li data-type='method'><a href="module-core_factory.html#.fromDate">fromDate</a></li><li data-type='method'><a href="module-core_factory.html#.fromISO">fromISO</a></li><li data-type='method'><a href="module-core_factory.html#.fromTimestamp">fromTimestamp</a></li><li data-type='method'><a href="module-core_factory.html#.now">now</a></li></ul></li><li><a href="module-index.html">index</a></li><li><a href="module-modules_arithmetic.html">modules/arithmetic</a><ul class='methods'><li data-type='method'><a href="module-modules_arithmetic.html#.add">add</a></li><li data-type='method'><a href="module-modules_arithmetic.html#.subtract">subtract</a></li></ul></li><li><a href="module-modules_compare.html">modules/compare</a><ul class='methods'><li data-type='method'><a href="module-modules_compare.html#.isAfter">isAfter</a></li><li data-type='method'><a href="module-modules_compare.html#.isBefore">isBefore</a></li><li data-type='method'><a href="module-modules_compare.html#.isBetween">isBetween</a></li><li data-type='method'><a href="module-modules_compare.html#.isSame">isSame</a></li></ul></li><li><a href="module-modules_duration.html">modules/duration</a><ul class='methods'><li data-type='method'><a href="module-modules_duration.html#.duration">duration</a></li></ul></li><li><a href="module-modules_format.html">modules/format</a><ul class='methods'><li data-type='method'><a href="module-modules_format.html#.format">format</a></li></ul></li><li><a href="module-modules_interval.html">modules/interval</a><ul class='methods'><li data-type='method'><a href="module-modules_interval.html#.interval">interval</a></li></ul></li><li><a href="module-modules_timezone.html">modules/timezone</a><ul class='methods'><li data-type='method'><a href="module-modules_timezone.html#.getTimezoneOffset">getTimezoneOffset</a></li><li data-type='method'><a href="module-modules_timezone.html#.setTimezone">setTimezone</a></li></ul></li><li><a href="module-utils_calendar.html">utils/calendar</a><ul class='methods'><li data-type='method'><a href="module-utils_calendar.html#.addByCalendarUnit">addByCalendarUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.addByFixedUnit">addByFixedUnit</a></li><li data-type='method'><a href="module-utils_calendar.html#.daysInMonth">daysInMonth</a></li><li data-type='method'><a href="module-utils_calendar.html#.diff">diff</a></li><li data-type='method'><a href="module-utils_calendar.html#.isLeapYear">isLeapYear</a></li></ul></li><li><a href="module-utils_units.html">utils/units</a><ul class='methods'><li data-type='method'><a href="module-utils_units.html#.isCalendarUnit">isCalendarUnit</a></li><li data-type='method'><a href="module-utils_units.html#.isFixedUnit">isFixedUnit</a></li><li data-type='method'><a href="module-utils_units.html#.normalizeUnit">normalizeUnit</a></li><li data-type='method'><a href="module-utils_units.html#.unitToMilliseconds">unitToMilliseconds</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">modules/compare.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { OzTime } from '../core/core.js';
+import { normalizeUnit } from '../utils/units.js';
+
+/**
+ * Модуль сравнений для экземпляров {@link OzTime}.
+ *
+ * @module modules/compare
+ */
+
+/**
+ * Проверяет, является ли значение экземпляром OzTime.
+ *
+ * @private
+ * @param {*} value - Проверяемое значение.
+ * @param {string} name - Имя параметра.
+ * @throws {TypeError} Выбрасывается, если значение не является экземпляром OzTime.
+ * @returns {void}
+ */
+function assertOzTime(value, name) {
+    if (!(value instanceof OzTime)) {
+        throw new TypeError(`${name} must be OzTime`);
+    }
+}
+
+/**
+ * Обрезает timestamp до заданной точности.
+ *
+ * @private
+ * @param {number} timestamp - Исходный timestamp в миллисекундах.
+ * @param {string} unit - Единица точности.
+ * @throws {Error} Выбрасывается, если единица не поддерживается.
+ * @returns {number} Timestamp, обрезанный до заданной единицы времени.
+ */
+function truncateToUnit(timestamp, unit) {
+    const normalizedUnit = normalizeUnit(unit);
+    const d = new Date(timestamp);
+
+    switch (normalizedUnit) {
+        case 'millisecond':
+            return d.getTime();
+
+        case 'second':
+            d.setUTCMilliseconds(0);
+            break;
+
+        case 'minute':
+            d.setUTCSeconds(0, 0);
+            break;
+
+        case 'hour':
+            d.setUTCMinutes(0, 0, 0);
+            break;
+
+        case 'day':
+            d.setUTCHours(0, 0, 0, 0);
+            break;
+
+        case 'month':
+            d.setUTCHours(0, 0, 0, 0);
+            d.setUTCDate(1);
+            break;
+
+        case 'year':
+            d.setUTCHours(0, 0, 0, 0);
+            d.setUTCDate(1);
+            d.setUTCMonth(0);
+            break;
+
+        default:
+            throw new Error(`Unsupported unit for truncateToUnit: ${unit}`);
+    }
+
+    return d.getTime();
+}
+
+/**
+ * Проверяет, равны ли два значения времени с учётом заданной точности.
+ *
+ * @param {OzTime} a - Первое значение.
+ * @param {OzTime} b - Второе значение.
+ * @param {string} [unit='millisecond'] - Точность сравнения.
+ * @throws {TypeError} Выбрасывается, если хотя бы один аргумент не является экземпляром OzTime.
+ * @returns {boolean} `true`, если значения равны на заданной точности.
+ * @example
+ * import { isSame, fromISO } from 'oz-time';
+ *
+ * const a = fromISO('2024-05-25T12:00:00.100Z');
+ * const b = fromISO('2024-05-25T12:00:00.900Z');
+ * console.log(isSame(a, b, 'second')); // ожидаемый результат: true
+ */
+export function isSame(a, b, unit = 'millisecond') {
+    assertOzTime(a, 'a');
+    assertOzTime(b, 'b');
+
+    const tsA = truncateToUnit(a.getTimestamp(), unit);
+    const tsB = truncateToUnit(b.getTimestamp(), unit);
+
+    return tsA === tsB;
+}
+
+/**
+ * Проверяет, находится ли первое значение раньше второго
+ * с учётом заданной точности.
+ *
+ * @param {OzTime} a - Первое значение.
+ * @param {OzTime} b - Второе значение.
+ * @param {string} [unit='millisecond'] - Точность сравнения.
+ * @throws {TypeError} Выбрасывается, если хотя бы один аргумент не является экземпляром OzTime.
+ * @returns {boolean} `true`, если первое значение раньше второго.
+ * @example
+ * import { isBefore, fromISO } from 'oz-time';
+ *
+ * const a = fromISO('2024-05-25T12:00:00Z');
+ * const b = fromISO('2024-05-26T12:00:00Z');
+ * console.log(isBefore(a, b)); // ожидаемый результат: true
+ */
+export function isBefore(a, b, unit = 'millisecond') {
+    assertOzTime(a, 'a');
+    assertOzTime(b, 'b');
+
+    const tsA = truncateToUnit(a.getTimestamp(), unit);
+    const tsB = truncateToUnit(b.getTimestamp(), unit);
+
+    return tsA &lt; tsB;
+}
+
+/**
+ * Проверяет, находится ли первое значение позже второго
+ * с учётом заданной точности.
+ *
+ * @param {OzTime} a - Первое значение.
+ * @param {OzTime} b - Второе значение.
+ * @param {string} [unit='millisecond'] - Точность сравнения.
+ * @throws {TypeError} Выбрасывается, если хотя бы один аргумент не является экземпляром OzTime.
+ * @returns {boolean} `true`, если первое значение позже второго.
+ * @example
+ * import { isAfter, fromISO } from 'oz-time';
+ *
+ * const a = fromISO('2024-05-26T12:00:00Z');
+ * const b = fromISO('2024-05-25T12:00:00Z');
+ * console.log(isAfter(a, b)); // ожидаемый результат: true
+ */
+export function isAfter(a, b, unit = 'millisecond') {
+    assertOzTime(a, 'a');
+    assertOzTime(b, 'b');
+
+    const tsA = truncateToUnit(a.getTimestamp(), unit);
+    const tsB = truncateToUnit(b.getTimestamp(), unit);
+
+    return tsA > tsB;
+}
+
+/**
+ * Проверяет, попадает ли целевое значение в диапазон между двумя границами
+ * с учётом заданной точности.
+ *
+ * @param {OzTime} target - Проверяемое значение.
+ * @param {OzTime} left - Левая граница.
+ * @param {OzTime} right - Правая граница.
+ * @param {string} [unit='millisecond'] - Точность сравнения.
+ * @param {'[]'|'[)'|'(]'|'()'} [inclusivity='[]'] - Формат включённости границ.
+ * @throws {TypeError} Выбрасывается, если хотя бы один аргумент не является экземпляром OzTime.
+ * @throws {Error} Выбрасывается, если inclusivity задан некорректно.
+ * @returns {boolean} `true`, если значение находится внутри диапазона.
+ * @example
+ * import { isBetween, fromISO } from 'oz-time';
+ *
+ * const target = fromISO('2024-05-25T12:00:00Z');
+ * const start = fromISO('2024-05-25T10:00:00Z');
+ * const end = fromISO('2024-05-25T14:00:00Z');
+ * console.log(isBetween(target, start, end)); // ожидаемый результат: true
+ */
+export function isBetween(target, left, right, unit = 'millisecond', inclusivity = '[]') {
+    assertOzTime(target, 'target');
+    assertOzTime(left, 'left');
+    assertOzTime(right, 'right');
+
+    const t = truncateToUnit(target.getTimestamp(), unit);
+    const l = truncateToUnit(left.getTimestamp(), unit);
+    const r = truncateToUnit(right.getTimestamp(), unit);
+
+    const min = Math.min(l, r);
+    const max = Math.max(l, r);
+
+    switch (inclusivity) {
+        case '[]':
+            return t >= min &amp;&amp; t &lt;= max;
+        case '[)':
+            return t >= min &amp;&amp; t &lt; max;
+        case '(]':
+            return t > min &amp;&amp; t &lt;= max;
+        case '()':
+            return t > min &amp;&amp; t &lt; max;
+        default:
+            throw new Error(`Invalid inclusivity value: ${inclusivity}`);
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
