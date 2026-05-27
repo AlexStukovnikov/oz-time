@@ -78,3 +78,59 @@ describe('OzTime core', () => {
         expect(() => new OzTime(Date.now(), 'UTC', '')).toThrow();
     });
 });
+
+    describe('Static factory methods', () => {
+        it('creates instance via static now()', () => {
+            const time = OzTime.now('Europe/Moscow', 'ru-RU');
+            expect(time).toBeInstanceOf(OzTime);
+            expect(time.getTimezone()).toBe('Europe/Moscow');
+            expect(time.getLocale()).toBe('ru-RU');
+            expect(typeof time.getTimestamp()).toBe('number');
+        });
+
+        it('creates instance via static fromTimestamp()', () => {
+            const ts = Date.UTC(2026, 2, 5, 12, 0, 0);
+            const time = OzTime.fromTimestamp(ts, 'UTC', 'en-US');
+            expect(time).toBeInstanceOf(OzTime);
+            expect(time.getTimestamp()).toBe(ts);
+        });
+
+        it('creates instance via static fromDate()', () => {
+            const d = new Date(Date.UTC(2026, 2, 5, 12, 0, 0));
+            const time = OzTime.fromDate(d, 'UTC', 'en-US');
+            expect(time).toBeInstanceOf(OzTime);
+            expect(time.getTimestamp()).toBe(d.getTime());
+        });
+
+        it('creates instance via static fromISO()', () => {
+            const time = OzTime.fromISO('2026-03-05T12:00:00.000Z', 'UTC', 'en-US');
+            expect(time).toBeInstanceOf(OzTime);
+            expect(time.toTimestamp()).toBe(Date.UTC(2026, 2, 5, 12, 0, 0));
+        });
+
+        it('creates instance via static fromComponents()', () => {
+            // Месяц март = 3
+            const time = OzTime.fromComponents(2026, 3, 5, 12, 0, 0, 0, 'UTC', 'en-US');
+            expect(time).toBeInstanceOf(OzTime);
+            expect(time.toISOString()).toBe('2026-03-05T12:00:00.000Z');
+        });
+
+        it('creates interval via static interval()', () => {
+            const start = OzTime.fromISO('2026-03-05T10:00:00Z');
+            const end = OzTime.fromISO('2026-03-05T12:00:00Z');
+            const range = OzTime.interval(start, end);
+            
+            // Проверяем, что вернулся объект интервала, у которого есть метод duration
+            expect(typeof range.duration).toBe('function');
+            expect(range.duration('hour')).toBe(2);
+        });
+
+        it('creates duration via static duration()', () => {
+            const dur = OzTime.duration(2, 'hour');
+            
+            // Проверяем, что вернулся объект длительности, у которого есть методы as*
+            expect(typeof dur.asMilliseconds).toBe('function');
+            expect(dur.asMilliseconds()).toBe(2 * 60 * 60 * 1000);
+            expect(dur.asMinutes()).toBe(120);
+        });
+    });
