@@ -1,5 +1,5 @@
 import { OzTime } from '../core/core.js';
-import { normalizeUnit, isFixedUnit, unitToMilliseconds } from '../utils/units.js';
+import { Duration } from './duration.js';
 
 /**
  * Модуль интервалов времени.
@@ -144,11 +144,9 @@ export class Interval {
     }
 
     /**
-     * Возвращает длительность интервала в фиксированной единице времени.
+     * Возвращает длительность интервала.
      *
-     * @param {string} [unit='millisecond'] - Фиксированная единица времени.
-     * @throws {Error} Выбрасывается, если unit не является фиксированной единицей времени.
-     * @returns {number} Длительность интервала в указанной единице.
+     * @returns {Duration} Длительность интервала в виде экземпляра {@link Duration}.
      * @example
      * import { Interval, fromISO } from '@alexstukovnikov/oz-time';
      *
@@ -156,17 +154,12 @@ export class Interval {
      *   fromISO('2024-05-25T10:00:00Z'),
      *   fromISO('2024-05-25T12:00:00Z')
      * );
-     * console.log(range.duration('hour')); // ожидаемый результат: 2
+     *
+     * console.log(range.duration().asHours()); // ожидаемый результат: 2
      */
-    duration(unit = 'millisecond') {
-        const normalizedUnit = normalizeUnit(unit);
-
-        if (!isFixedUnit(normalizedUnit)) {
-            throw new Error(`Interval.duration supports only fixed units: ${unit}`);
-        }
-
+    duration() {
         const diffMs = this._end.getTimestamp() - this._start.getTimestamp();
-        return diffMs / unitToMilliseconds(normalizedUnit);
+        return new Duration(diffMs);
     }
 }
 

@@ -5,12 +5,6 @@ export default defineConfig({
         lib: {
             entry: 'src/index.js',
             name: 'OzTime',
-            formats: ['es', 'cjs'],
-            fileName: (format) => {
-                if (format === 'es') return 'oz-time.esm.js';
-                if (format === 'cjs') return 'oz-time.cjs';
-                return `oz-time.${format}.js`;
-            },
         },
         target: 'es2021',
         sourcemap: false,
